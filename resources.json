@@ -1,0 +1,919 @@
+{
+  "curriculum": {
+    "sourceLanguage": {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English"
+    },
+    "targetLanguage": {
+      "code": "de",
+      "name": "German",
+      "nativeName": "Deutsch"
+    },
+    "proficiencyLevels": [
+      {
+        "id": "absolute_beginner",
+        "name": "Absolute Beginner",
+        "cefrLevel": "A1",
+        "order": 1,
+        "description": "Start from zero — learn the alphabet, basic greetings, and survival phrases",
+        "sections": [
+          {
+            "id": "ab_s1",
+            "title": "Everyday Basics",
+            "description": "Learn essential words and phrases for daily life",
+            "order": 1,
+            "topicsCovered": ["greetings", "numbers", "colors", "alphabet"],
+            "units": [
+              {
+                "id": "ab_s1_u1",
+                "title": "Greetings & Introductions",
+                "order": 1,
+                "topic": "greetings",
+                "objectives": [
+                  "Say hello and goodbye in formal and informal settings",
+                  "Introduce yourself with your name",
+                  "Ask someone their name"
+                ],
+                "newVocabulary": [
+                  {
+                    "term": "Hallo",
+                    "definition": "Hello",
+                    "phonetic": "HAH-lo",
+                    "partOfSpeech": "interjection",
+                    "gender": null,
+                    "exampleSentence": "Hallo, wie geht es dir?",
+                    "exampleTranslation": "Hello, how are you?"
+                  },
+                  {
+                    "term": "Guten Tag",
+                    "definition": "Good day",
+                    "phonetic": "GOO-ten tahk",
+                    "partOfSpeech": "phrase",
+                    "gender": null,
+                    "exampleSentence": "Guten Tag, Herr Müller.",
+                    "exampleTranslation": "Good day, Mr. Müller."
+                  },
+                  {
+                    "term": "Tschüss",
+                    "definition": "Bye",
+                    "phonetic": "chüss",
+                    "partOfSpeech": "interjection",
+                    "gender": null,
+                    "exampleSentence": "Tschüss, bis morgen!",
+                    "exampleTranslation": "Bye, see you tomorrow!"
+                  },
+                  {
+                    "term": "Auf Wiedersehen",
+                    "definition": "Goodbye",
+                    "phonetic": "owf VEE-der-zay-en",
+                    "partOfSpeech": "phrase",
+                    "gender": null,
+                    "exampleSentence": "Auf Wiedersehen, Frau Schmidt.",
+                    "exampleTranslation": "Goodbye, Mrs. Schmidt."
+                  },
+                  {
+                    "term": "heißen",
+                    "definition": "to be called / named",
+                    "phonetic": "HY-sen",
+                    "partOfSpeech": "verb",
+                    "gender": null,
+                    "exampleSentence": "Ich heiße Anna.",
+                    "exampleTranslation": "My name is Anna."
+                  },
+                  {
+                    "term": "Danke",
+                    "definition": "Thank you",
+                    "phonetic": "DAHN-keh",
+                    "partOfSpeech": "interjection",
+                    "gender": null,
+                    "exampleSentence": "Danke schön!",
+                    "exampleTranslation": "Thank you very much!"
+                  },
+                  {
+                    "term": "Bitte",
+                    "definition": "Please / You're welcome",
+                    "phonetic": "BIT-teh",
+                    "partOfSpeech": "interjection",
+                    "gender": null,
+                    "exampleSentence": "Bitte schön.",
+                    "exampleTranslation": "You're welcome."
+                  },
+                  {
+                    "term": "Guten Morgen",
+                    "definition": "Good morning",
+                    "phonetic": "GOO-ten MOR-gen",
+                    "partOfSpeech": "phrase",
+                    "gender": null,
+                    "exampleSentence": "Guten Morgen! Wie geht es Ihnen?",
+                    "exampleTranslation": "Good morning! How are you?"
+                  }
+                ],
+                "grammarFocus": "Basic sentence structure: Subject + Verb (Ich heiße ...)",
+                "culturalNote": "Germans distinguish between formal (Sie) and informal (du) address. Use 'Sie' with strangers and 'du' with friends.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  {
+                    "exerciseId": "ab_s1_u1_e1",
+                    "type": "pronunciation",
+                    "instruction": "Listen and read the sentence. Tap each word to see its meaning.",
+                    "points": 10,
+                    "content": {
+                      "sentence": "Guten Tag, ich heiße Anna.",
+                      "translation": "Good day, my name is Anna.",
+                      "audioUrl": "/audio/de/ab_s1_u1_e1.mp3",
+                      "words": [
+                        { "word": "Guten", "meaning": "good", "phonetic": "GOO-ten", "isNew": true },
+                        { "word": "Tag", "meaning": "day", "phonetic": "tahk", "isNew": true },
+                        { "word": "ich", "meaning": "I", "phonetic": "ikh", "isNew": true },
+                        { "word": "heiße", "meaning": "am called", "phonetic": "HY-seh", "isNew": true },
+                        { "word": "Anna", "meaning": "Anna", "phonetic": "AH-na", "isNew": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e2",
+                    "type": "complete_chat",
+                    "instruction": "Complete the conversation by choosing the correct response.",
+                    "points": 10,
+                    "content": {
+                      "dialogue": [
+                        { "speaker": "app", "text": "Guten Tag! Wie heißen Sie?", "translation": "Good day! What is your name?" },
+                        { "speaker": "user", "text": null }
+                      ],
+                      "options": [
+                        { "id": "a", "text": "Ich heiße Maria.", "isCorrect": true },
+                        { "id": "b", "text": "Danke schön.", "isCorrect": false },
+                        { "id": "c", "text": "Auf Wiedersehen.", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e3",
+                    "type": "listen_select",
+                    "instruction": "Tap what you hear.",
+                    "points": 10,
+                    "content": {
+                      "audioUrl": "/audio/de/ab_s1_u1_e3.mp3",
+                      "transcript": "Guten Morgen",
+                      "options": [
+                        { "id": "a", "text": "Good morning", "isCorrect": true },
+                        { "id": "b", "text": "Good evening", "isCorrect": false },
+                        { "id": "c", "text": "Good night", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e4",
+                    "type": "matching_pairs",
+                    "instruction": "Match the German words with their English meanings.",
+                    "points": 10,
+                    "content": {
+                      "pairs": [
+                        { "source": "Hallo", "target": "Hello" },
+                        { "source": "Danke", "target": "Thank you" },
+                        { "source": "Bitte", "target": "Please" },
+                        { "source": "Tschüss", "target": "Bye" }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e5",
+                    "type": "select_translation",
+                    "instruction": "Select the correct translation.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "Auf Wiedersehen!",
+                      "promptLanguage": "target",
+                      "options": [
+                        { "id": "a", "text": "Goodbye!", "isCorrect": true },
+                        { "id": "b", "text": "Good morning!", "isCorrect": false },
+                        { "id": "c", "text": "Thank you!", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e6",
+                    "type": "reorder_words",
+                    "instruction": "Arrange the words to form a correct sentence.",
+                    "points": 10,
+                    "content": {
+                      "shuffledWords": ["heiße", "Ich", "Anna"],
+                      "correctOrder": ["Ich", "heiße", "Anna"],
+                      "translation": "My name is Anna"
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e7",
+                    "type": "fill_blank",
+                    "instruction": "Fill in the blank with the correct word.",
+                    "points": 10,
+                    "hint": "Think about how to say 'my name is' in German.",
+                    "content": {
+                      "text": "Ich _____ Maria.",
+                      "context": "Introducing yourself",
+                      "blanks": [
+                        { "position": 1, "acceptedAnswers": ["heiße", "heisse"], "caseSensitive": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e8",
+                    "type": "multiple_choice",
+                    "instruction": "Choose the correct answer.",
+                    "points": 10,
+                    "content": {
+                      "question": "What does 'Guten Tag' mean?",
+                      "options": [
+                        { "id": "a", "text": "Good day", "isCorrect": true },
+                        { "id": "b", "text": "Good night", "isCorrect": false },
+                        { "id": "c", "text": "Goodbye", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e9",
+                    "type": "grammar",
+                    "instruction": "Choose the correct form.",
+                    "points": 10,
+                    "content": {
+                      "rule": "The verb 'heißen' conjugates to 'heiße' for 'ich' (I).",
+                      "question": "Ich _____ Thomas. (My name is Thomas.)",
+                      "options": [
+                        { "id": "a", "text": "heiße", "isCorrect": true },
+                        { "id": "b", "text": "heißt", "isCorrect": false },
+                        { "id": "c", "text": "heißen", "isCorrect": false }
+                      ],
+                      "explanation": "'Heißen' conjugates to 'heiße' with the subject 'ich'."
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u1_e10",
+                    "type": "write_response",
+                    "instruction": "Read the German text and write what it means in English.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "Read the following and write what it means in English:",
+                      "text": "Hallo! Ich heiße Maria. Guten Tag!",
+                      "audioUrl": "/audio/de/ab_s1_u1_e10.mp3",
+                      "acceptedKeywords": ["hello", "name", "Maria", "good", "day"],
+                      "sampleAnswer": "Hello! My name is Maria. Good day!",
+                      "minWords": 3,
+                      "maxWords": 30
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "ab_s1_u2",
+                "title": "Numbers 1-20",
+                "order": 2,
+                "topic": "numbers",
+                "objectives": [
+                  "Count from 1 to 20 in German",
+                  "Recognize written and spoken numbers",
+                  "Use numbers in simple sentences"
+                ],
+                "newVocabulary": [
+                  { "term": "eins", "definition": "one", "phonetic": "ayns", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "zwei", "definition": "two", "phonetic": "tsvy", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "drei", "definition": "three", "phonetic": "dry", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "vier", "definition": "four", "phonetic": "feer", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "fünf", "definition": "five", "phonetic": "fünf", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "zehn", "definition": "ten", "phonetic": "tsayn", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "zwanzig", "definition": "twenty", "phonetic": "TSVAHN-tsikh", "partOfSpeech": "numeral", "gender": null }
+                ],
+                "grammarFocus": "German number words and their pronunciation patterns",
+                "culturalNote": "Germans count on their fingers starting with the thumb for 'one'.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  {
+                    "exerciseId": "ab_s1_u2_e1",
+                    "type": "pronunciation",
+                    "instruction": "Listen and read the numbers. Tap each word to see its meaning.",
+                    "points": 10,
+                    "content": {
+                      "sentence": "Eins, zwei, drei, vier, fünf",
+                      "translation": "One, two, three, four, five",
+                      "audioUrl": "/audio/de/ab_s1_u2_e1.mp3",
+                      "words": [
+                        { "word": "Eins", "meaning": "one", "phonetic": "ayns", "isNew": true },
+                        { "word": "zwei", "meaning": "two", "phonetic": "tsvy", "isNew": true },
+                        { "word": "drei", "meaning": "three", "phonetic": "dry", "isNew": true },
+                        { "word": "vier", "meaning": "four", "phonetic": "feer", "isNew": true },
+                        { "word": "fünf", "meaning": "five", "phonetic": "fünf", "isNew": true }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e2",
+                    "type": "complete_chat",
+                    "instruction": "Complete the conversation by choosing the correct response.",
+                    "points": 10,
+                    "content": {
+                      "dialogue": [
+                        { "speaker": "app", "text": "Wie viele Geschwister hast du?", "translation": "How many siblings do you have?" },
+                        { "speaker": "user", "text": null }
+                      ],
+                      "options": [
+                        { "id": "a", "text": "Ich habe zwei Geschwister.", "isCorrect": true },
+                        { "id": "b", "text": "Ich heiße Anna.", "isCorrect": false },
+                        { "id": "c", "text": "Guten Tag!", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e3",
+                    "type": "listen_select",
+                    "instruction": "Tap what you hear.",
+                    "points": 10,
+                    "content": {
+                      "audioUrl": "/audio/de/ab_s1_u2_e3.mp3",
+                      "transcript": "sieben",
+                      "options": [
+                        { "id": "a", "text": "seven", "isCorrect": true },
+                        { "id": "b", "text": "six", "isCorrect": false },
+                        { "id": "c", "text": "nine", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e4",
+                    "type": "matching_pairs",
+                    "instruction": "Match the German numbers with their English equivalents.",
+                    "points": 10,
+                    "content": {
+                      "pairs": [
+                        { "source": "eins", "target": "one" },
+                        { "source": "drei", "target": "three" },
+                        { "source": "sieben", "target": "seven" },
+                        { "source": "zehn", "target": "ten" }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e5",
+                    "type": "select_translation",
+                    "instruction": "Select the correct translation.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "zwanzig",
+                      "promptLanguage": "target",
+                      "options": [
+                        { "id": "a", "text": "twenty", "isCorrect": true },
+                        { "id": "b", "text": "twelve", "isCorrect": false },
+                        { "id": "c", "text": "two", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e6",
+                    "type": "reorder_words",
+                    "instruction": "Arrange the words to form a correct sentence.",
+                    "points": 10,
+                    "content": {
+                      "shuffledWords": ["habe", "Ich", "Geschwister", "zwei"],
+                      "correctOrder": ["Ich", "habe", "zwei", "Geschwister"],
+                      "translation": "I have two siblings"
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e7",
+                    "type": "fill_blank",
+                    "instruction": "Fill in the blank with the correct number word.",
+                    "points": 10,
+                    "hint": "The number in parentheses is your clue.",
+                    "content": {
+                      "text": "Ich habe _____ Geschwister. (2)",
+                      "context": "Talking about family",
+                      "blanks": [
+                        { "position": 1, "acceptedAnswers": ["zwei"], "caseSensitive": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e8",
+                    "type": "multiple_choice",
+                    "instruction": "Choose the correct answer.",
+                    "points": 10,
+                    "content": {
+                      "question": "What number is 'fünf'?",
+                      "options": [
+                        { "id": "a", "text": "5", "isCorrect": true },
+                        { "id": "b", "text": "4", "isCorrect": false },
+                        { "id": "c", "text": "15", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e9",
+                    "type": "grammar",
+                    "instruction": "Choose the correct form.",
+                    "points": 10,
+                    "content": {
+                      "rule": "In German, 'haben' (to have) conjugates to 'habe' for 'ich'.",
+                      "question": "Ich _____ drei Katzen. (I have three cats.)",
+                      "options": [
+                        { "id": "a", "text": "habe", "isCorrect": true },
+                        { "id": "b", "text": "hast", "isCorrect": false },
+                        { "id": "c", "text": "hat", "isCorrect": false }
+                      ],
+                      "explanation": "'Haben' conjugates to 'habe' with the subject 'ich'."
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u2_e10",
+                    "type": "write_response",
+                    "instruction": "Read the German text and write what it means in English.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "Read the following and write what it means:",
+                      "text": "Ich habe fünf Bücher und drei Stifte.",
+                      "acceptedKeywords": ["five", "books", "three", "pens"],
+                      "sampleAnswer": "I have five books and three pens.",
+                      "minWords": 3,
+                      "maxWords": 20
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "ab_s1_u3",
+                "title": "Colors & Descriptions",
+                "order": 3,
+                "topic": "colors",
+                "objectives": [
+                  "Name basic colors in German",
+                  "Use colors as adjectives",
+                  "Describe objects using colors"
+                ],
+                "newVocabulary": [
+                  { "term": "rot", "definition": "red", "phonetic": "roht", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "blau", "definition": "blue", "phonetic": "blow", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "grün", "definition": "green", "phonetic": "grün", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "gelb", "definition": "yellow", "phonetic": "gelp", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "schwarz", "definition": "black", "phonetic": "shvarts", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "weiß", "definition": "white", "phonetic": "vys", "partOfSpeech": "adjective", "gender": null }
+                ],
+                "grammarFocus": "Adjective placement: predicative (Das Auto ist rot) vs. attributive (das rote Auto)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  {
+                    "exerciseId": "ab_s1_u3_e1",
+                    "type": "pronunciation",
+                    "instruction": "Listen and read. Tap each word to see its meaning.",
+                    "points": 10,
+                    "content": {
+                      "sentence": "Das Auto ist rot.",
+                      "translation": "The car is red.",
+                      "words": [
+                        { "word": "Das", "meaning": "the", "phonetic": "dahs", "isNew": false },
+                        { "word": "Auto", "meaning": "car", "phonetic": "OW-toh", "isNew": true },
+                        { "word": "ist", "meaning": "is", "phonetic": "ist", "isNew": false },
+                        { "word": "rot", "meaning": "red", "phonetic": "roht", "isNew": true }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e2",
+                    "type": "complete_chat",
+                    "instruction": "Complete the conversation.",
+                    "points": 10,
+                    "content": {
+                      "dialogue": [
+                        { "speaker": "app", "text": "Welche Farbe hat dein Auto?", "translation": "What color is your car?" },
+                        { "speaker": "user", "text": null }
+                      ],
+                      "options": [
+                        { "id": "a", "text": "Mein Auto ist blau.", "isCorrect": true },
+                        { "id": "b", "text": "Ich habe zwei.", "isCorrect": false },
+                        { "id": "c", "text": "Guten Tag!", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e3",
+                    "type": "listen_select",
+                    "instruction": "Tap what you hear.",
+                    "points": 10,
+                    "content": {
+                      "transcript": "grün",
+                      "options": [
+                        { "id": "a", "text": "green", "isCorrect": true },
+                        { "id": "b", "text": "brown", "isCorrect": false },
+                        { "id": "c", "text": "gray", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e4",
+                    "type": "matching_pairs",
+                    "instruction": "Match the German colors with their English meanings.",
+                    "points": 10,
+                    "content": {
+                      "pairs": [
+                        { "source": "rot", "target": "red" },
+                        { "source": "blau", "target": "blue" },
+                        { "source": "gelb", "target": "yellow" },
+                        { "source": "schwarz", "target": "black" }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e5",
+                    "type": "select_translation",
+                    "instruction": "Select the correct translation.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "weiß",
+                      "promptLanguage": "target",
+                      "options": [
+                        { "id": "a", "text": "white", "isCorrect": true },
+                        { "id": "b", "text": "wise", "isCorrect": false },
+                        { "id": "c", "text": "wet", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e6",
+                    "type": "reorder_words",
+                    "instruction": "Arrange the words to form a correct sentence.",
+                    "points": 10,
+                    "content": {
+                      "shuffledWords": ["ist", "Die", "Blume", "gelb"],
+                      "correctOrder": ["Die", "Blume", "ist", "gelb"],
+                      "translation": "The flower is yellow"
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e7",
+                    "type": "fill_blank",
+                    "instruction": "Fill in the blank with the correct color.",
+                    "points": 10,
+                    "content": {
+                      "text": "Der Himmel ist _____.",
+                      "context": "Describing the sky",
+                      "blanks": [
+                        { "position": 1, "acceptedAnswers": ["blau"], "caseSensitive": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e8",
+                    "type": "multiple_choice",
+                    "instruction": "Choose the correct answer.",
+                    "points": 10,
+                    "content": {
+                      "question": "What color is 'grün'?",
+                      "options": [
+                        { "id": "a", "text": "Green", "isCorrect": true },
+                        { "id": "b", "text": "Gray", "isCorrect": false },
+                        { "id": "c", "text": "Brown", "isCorrect": false }
+                      ]
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e9",
+                    "type": "grammar",
+                    "instruction": "Choose the correct form.",
+                    "points": 10,
+                    "content": {
+                      "rule": "In predicative use, German adjectives do not take endings: 'Das Auto ist rot.'",
+                      "question": "Das Haus ist _____. (The house is white.)",
+                      "options": [
+                        { "id": "a", "text": "weiß", "isCorrect": true },
+                        { "id": "b", "text": "weißes", "isCorrect": false },
+                        { "id": "c", "text": "weißen", "isCorrect": false }
+                      ],
+                      "explanation": "Predicative adjectives (after 'ist') take no ending in German."
+                    }
+                  },
+                  {
+                    "exerciseId": "ab_s1_u3_e10",
+                    "type": "write_response",
+                    "instruction": "Read the German text and write what it means in English.",
+                    "points": 10,
+                    "content": {
+                      "prompt": "Read and translate:",
+                      "text": "Die Katze ist schwarz und weiß.",
+                      "acceptedKeywords": ["cat", "black", "white"],
+                      "sampleAnswer": "The cat is black and white.",
+                      "minWords": 3,
+                      "maxWords": 20
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "ab_s1_u4",
+                "title": "The Alphabet & Pronunciation",
+                "order": 4,
+                "topic": "alphabet",
+                "objectives": [
+                  "Pronounce all German letters including umlauts (ä, ö, ü) and ß",
+                  "Spell your name in German",
+                  "Recognize special German sounds"
+                ],
+                "newVocabulary": [
+                  { "term": "das Alphabet", "definition": "the alphabet", "phonetic": "dahs al-fa-BAYT", "partOfSpeech": "noun", "gender": "neuter" },
+                  { "term": "buchstabieren", "definition": "to spell", "phonetic": "bookh-shtah-BEE-ren", "partOfSpeech": "verb", "gender": null },
+                  { "term": "der Buchstabe", "definition": "the letter", "phonetic": "dair BOOKH-shtah-beh", "partOfSpeech": "noun", "gender": "masculine" }
+                ],
+                "grammarFocus": "German umlauts (ä, ö, ü) and the Eszett (ß) — sounds that don't exist in English",
+                "culturalNote": "In Germany, when spelling on the phone, people use city names: A wie Anton, B wie Berlin.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u4_e1", "type": "pronunciation", "instruction": "Listen to the German alphabet sounds.", "points": 10, "content": { "sentence": "A, B, C, D, E, F, G", "translation": "A, B, C, D, E, F, G", "words": [{ "word": "A", "meaning": "ah", "phonetic": "ah", "isNew": true }, { "word": "B", "meaning": "bay", "phonetic": "bay", "isNew": true }, { "word": "C", "meaning": "tsay", "phonetic": "tsay", "isNew": true }, { "word": "D", "meaning": "day", "phonetic": "day", "isNew": true }, { "word": "E", "meaning": "ay", "phonetic": "ay", "isNew": true }, { "word": "F", "meaning": "ef", "phonetic": "ef", "isNew": true }, { "word": "G", "meaning": "gay", "phonetic": "gay", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u4_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Wie buchstabiert man das?", "translation": "How do you spell that?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "M-A-R-I-A", "isCorrect": true }, { "id": "b", "text": "Danke schön.", "isCorrect": false }, { "id": "c", "text": "Ich heiße Maria.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Ü", "options": [{ "id": "a", "text": "ü (like 'ew' with rounded lips)", "isCorrect": true }, { "id": "b", "text": "u (like 'oo')", "isCorrect": false }, { "id": "c", "text": "i (like 'ee')", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e4", "type": "matching_pairs", "instruction": "Match the special characters with their sounds.", "points": 10, "content": { "pairs": [{ "source": "ä", "target": "sounds like 'e' in bed" }, { "source": "ö", "target": "sounds like 'u' in burn" }, { "source": "ü", "target": "sounds like 'ew' rounded" }, { "source": "ß", "target": "sharp 's' sound" }] } },
+                  { "exerciseId": "ab_s1_u4_e5", "type": "select_translation", "instruction": "Which letter makes this sound?", "points": 10, "content": { "prompt": "A sharp 's' sound, used in words like 'Straße'", "promptLanguage": "source", "options": [{ "id": "a", "text": "ß", "isCorrect": true }, { "id": "b", "text": "sch", "isCorrect": false }, { "id": "c", "text": "z", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e6", "type": "reorder_words", "instruction": "Spell out 'Hallo' letter by letter.", "points": 10, "content": { "shuffledWords": ["L", "H", "O", "L", "A"], "correctOrder": ["H", "A", "L", "L", "O"], "translation": "Hello" } },
+                  { "exerciseId": "ab_s1_u4_e7", "type": "fill_blank", "instruction": "Fill in the missing umlaut letter.", "points": 10, "content": { "text": "Ich m_____chte Kaffee. (I would like coffee.)", "blanks": [{ "position": 1, "acceptedAnswers": ["ö"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u4_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "Which of these is NOT a German umlaut?", "options": [{ "id": "a", "text": "é", "isCorrect": true }, { "id": "b", "text": "ä", "isCorrect": false }, { "id": "c", "text": "ü", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "The Eszett (ß) is used after long vowels. 'ss' is used after short vowels.", "question": "Die Stra___e ist lang. (The street is long.)", "options": [{ "id": "a", "text": "ß", "isCorrect": true }, { "id": "b", "text": "ss", "isCorrect": false }, { "id": "c", "text": "s", "isCorrect": false }], "explanation": "After the long 'a' sound in 'Straße', we use 'ß'." } },
+                  { "exerciseId": "ab_s1_u4_e10", "type": "write_response", "instruction": "Spell the word you hear.", "points": 10, "content": { "prompt": "Write the German word for 'street' using the correct special character:", "text": "Straße", "acceptedKeywords": ["Straße", "Strasse"], "sampleAnswer": "Straße", "minWords": 1, "maxWords": 5 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u5",
+                "title": "Basic Phrases & Politeness",
+                "order": 5,
+                "topic": "phrases",
+                "objectives": [
+                  "Use common polite phrases (please, thank you, excuse me)",
+                  "Ask 'how are you?' and respond",
+                  "Handle basic social interactions"
+                ],
+                "newVocabulary": [
+                  { "term": "Entschuldigung", "definition": "Excuse me / Sorry", "phonetic": "ent-SHOOL-dee-gung", "partOfSpeech": "interjection", "gender": null },
+                  { "term": "Wie geht es Ihnen?", "definition": "How are you? (formal)", "phonetic": "vee gayt es EE-nen", "partOfSpeech": "phrase", "gender": null },
+                  { "term": "Mir geht es gut", "definition": "I'm fine", "phonetic": "meer gayt es goot", "partOfSpeech": "phrase", "gender": null },
+                  { "term": "Ja", "definition": "Yes", "phonetic": "yah", "partOfSpeech": "interjection", "gender": null },
+                  { "term": "Nein", "definition": "No", "phonetic": "nyn", "partOfSpeech": "interjection", "gender": null }
+                ],
+                "grammarFocus": "Formal (Sie) vs. informal (du) forms of address",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u5_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Entschuldigung, wie geht es Ihnen?", "translation": "Excuse me, how are you?", "words": [{ "word": "Entschuldigung", "meaning": "excuse me", "phonetic": "ent-SHOOL-dee-gung", "isNew": true }, { "word": "wie", "meaning": "how", "phonetic": "vee", "isNew": true }, { "word": "geht", "meaning": "goes", "phonetic": "gayt", "isNew": true }, { "word": "es", "meaning": "it", "phonetic": "es", "isNew": false }, { "word": "Ihnen", "meaning": "you (formal)", "phonetic": "EE-nen", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u5_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Wie geht es Ihnen?", "translation": "How are you?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Mir geht es gut, danke!", "isCorrect": true }, { "id": "b", "text": "Auf Wiedersehen!", "isCorrect": false }, { "id": "c", "text": "Ich heiße Thomas.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Entschuldigung", "options": [{ "id": "a", "text": "Excuse me", "isCorrect": true }, { "id": "b", "text": "Thank you", "isCorrect": false }, { "id": "c", "text": "Goodbye", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e4", "type": "matching_pairs", "instruction": "Match the phrases.", "points": 10, "content": { "pairs": [{ "source": "Ja", "target": "Yes" }, { "source": "Nein", "target": "No" }, { "source": "Danke", "target": "Thank you" }, { "source": "Bitte", "target": "Please" }] } },
+                  { "exerciseId": "ab_s1_u5_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "Mir geht es gut.", "promptLanguage": "target", "options": [{ "id": "a", "text": "I'm fine.", "isCorrect": true }, { "id": "b", "text": "My name is good.", "isCorrect": false }, { "id": "c", "text": "I'm going.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["gut", "geht", "Mir", "es"], "correctOrder": ["Mir", "geht", "es", "gut"], "translation": "I'm fine" } },
+                  { "exerciseId": "ab_s1_u5_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "Wie _____ es Ihnen?", "context": "Asking how someone is (formal)", "blanks": [{ "position": 1, "acceptedAnswers": ["geht"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u5_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'Entschuldigung' mean?", "options": [{ "id": "a", "text": "Excuse me / Sorry", "isCorrect": true }, { "id": "b", "text": "Thank you", "isCorrect": false }, { "id": "c", "text": "Hello", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "'Wie geht es Ihnen?' uses formal 'Sie'. 'Wie geht es dir?' uses informal 'du'.", "question": "Wie geht es _____? (formal: How are you?)", "options": [{ "id": "a", "text": "Ihnen", "isCorrect": true }, { "id": "b", "text": "dir", "isCorrect": false }, { "id": "c", "text": "mir", "isCorrect": false }], "explanation": "'Ihnen' is the formal dative form of 'Sie'." } },
+                  { "exerciseId": "ab_s1_u5_e10", "type": "write_response", "instruction": "Read and translate.", "points": 10, "content": { "prompt": "Translate to English:", "text": "Entschuldigung! Wie geht es Ihnen? Mir geht es gut, danke.", "acceptedKeywords": ["excuse", "how", "fine", "thank"], "sampleAnswer": "Excuse me! How are you? I'm fine, thank you.", "minWords": 5, "maxWords": 30 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u6",
+                "title": "Food & Drink Basics",
+                "order": 6,
+                "topic": "food_drink",
+                "objectives": ["Name common food and drink items", "Say what you like and dislike", "Order simple items"],
+                "newVocabulary": [
+                  { "term": "das Wasser", "definition": "water", "phonetic": "VAHS-ser", "partOfSpeech": "noun", "gender": "neuter" },
+                  { "term": "der Kaffee", "definition": "coffee", "phonetic": "KAH-feh", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "das Brot", "definition": "bread", "phonetic": "broht", "partOfSpeech": "noun", "gender": "neuter" },
+                  { "term": "die Milch", "definition": "milk", "phonetic": "milkh", "partOfSpeech": "noun", "gender": "feminine" },
+                  { "term": "der Tee", "definition": "tea", "phonetic": "tay", "partOfSpeech": "noun", "gender": "masculine" }
+                ],
+                "grammarFocus": "Definite articles by gender: der (m), die (f), das (n)",
+                "culturalNote": "Germans traditionally eat bread (Brot) for breakfast and dinner. Lunch is the main hot meal.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u6_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Kaffee und Milch, bitte.", "translation": "Coffee and milk, please.", "words": [{ "word": "Kaffee", "meaning": "coffee", "phonetic": "KAH-feh", "isNew": true }, { "word": "und", "meaning": "and", "phonetic": "oont", "isNew": false }, { "word": "Milch", "meaning": "milk", "phonetic": "milkh", "isNew": true }, { "word": "bitte", "meaning": "please", "phonetic": "BIT-teh", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u6_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Was möchten Sie trinken?", "translation": "What would you like to drink?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Einen Kaffee, bitte.", "isCorrect": true }, { "id": "b", "text": "Ich heiße Anna.", "isCorrect": false }, { "id": "c", "text": "Auf Wiedersehen!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Wasser", "options": [{ "id": "a", "text": "water", "isCorrect": true }, { "id": "b", "text": "coffee", "isCorrect": false }, { "id": "c", "text": "milk", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e4", "type": "matching_pairs", "instruction": "Match the items.", "points": 10, "content": { "pairs": [{ "source": "Kaffee", "target": "coffee" }, { "source": "Wasser", "target": "water" }, { "source": "Brot", "target": "bread" }, { "source": "Milch", "target": "milk" }] } },
+                  { "exerciseId": "ab_s1_u6_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "der Tee", "promptLanguage": "target", "options": [{ "id": "a", "text": "tea", "isCorrect": true }, { "id": "b", "text": "the", "isCorrect": false }, { "id": "c", "text": "three", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["bitte", "Wasser", "Ich", "möchte"], "correctOrder": ["Ich", "möchte", "Wasser", "bitte"], "translation": "I would like water please" } },
+                  { "exerciseId": "ab_s1_u6_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "Ich möchte _____, bitte.", "context": "Ordering coffee", "blanks": [{ "position": 1, "acceptedAnswers": ["Kaffee", "kaffee"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u6_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "Which article goes with 'Milch'?", "options": [{ "id": "a", "text": "die (feminine)", "isCorrect": true }, { "id": "b", "text": "der (masculine)", "isCorrect": false }, { "id": "c", "text": "das (neuter)", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e9", "type": "grammar", "instruction": "Choose the correct article.", "points": 10, "content": { "rule": "German nouns have grammatical gender: der (masculine), die (feminine), das (neuter).", "question": "_____ Kaffee ist heiß. (The coffee is hot.)", "options": [{ "id": "a", "text": "Der", "isCorrect": true }, { "id": "b", "text": "Die", "isCorrect": false }, { "id": "c", "text": "Das", "isCorrect": false }], "explanation": "'Kaffee' is masculine, so it uses 'der'." } },
+                  { "exerciseId": "ab_s1_u6_e10", "type": "write_response", "instruction": "Translate to English.", "points": 10, "content": { "prompt": "Translate:", "text": "Ich möchte Kaffee und Brot, bitte.", "acceptedKeywords": ["coffee", "bread", "please"], "sampleAnswer": "I would like coffee and bread, please.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u7",
+                "title": "Family Members",
+                "order": 7,
+                "topic": "family",
+                "objectives": ["Name immediate family members", "Talk about your family", "Use possessive pronouns (mein/meine)"],
+                "newVocabulary": [
+                  { "term": "die Mutter", "definition": "mother", "phonetic": "MOO-ter", "partOfSpeech": "noun", "gender": "feminine" },
+                  { "term": "der Vater", "definition": "father", "phonetic": "FAH-ter", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "die Schwester", "definition": "sister", "phonetic": "SHVES-ter", "partOfSpeech": "noun", "gender": "feminine" },
+                  { "term": "der Bruder", "definition": "brother", "phonetic": "BROO-der", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "die Familie", "definition": "family", "phonetic": "fa-MEE-lee-eh", "partOfSpeech": "noun", "gender": "feminine" }
+                ],
+                "grammarFocus": "Possessive pronoun 'mein' changes with gender: mein Vater (m), meine Mutter (f), mein Kind (n)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u7_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Das ist meine Familie.", "translation": "This is my family.", "words": [{ "word": "Das", "meaning": "this", "phonetic": "dahs", "isNew": false }, { "word": "ist", "meaning": "is", "phonetic": "ist", "isNew": false }, { "word": "meine", "meaning": "my", "phonetic": "MY-neh", "isNew": true }, { "word": "Familie", "meaning": "family", "phonetic": "fa-MEE-lee-eh", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u7_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Hast du Geschwister?", "translation": "Do you have siblings?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Ja, ich habe eine Schwester.", "isCorrect": true }, { "id": "b", "text": "Ich bin müde.", "isCorrect": false }, { "id": "c", "text": "Guten Morgen!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Bruder", "options": [{ "id": "a", "text": "brother", "isCorrect": true }, { "id": "b", "text": "bread", "isCorrect": false }, { "id": "c", "text": "bridge", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e4", "type": "matching_pairs", "instruction": "Match the family members.", "points": 10, "content": { "pairs": [{ "source": "Mutter", "target": "mother" }, { "source": "Vater", "target": "father" }, { "source": "Schwester", "target": "sister" }, { "source": "Bruder", "target": "brother" }] } },
+                  { "exerciseId": "ab_s1_u7_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "die Familie", "promptLanguage": "target", "options": [{ "id": "a", "text": "the family", "isCorrect": true }, { "id": "b", "text": "the friend", "isCorrect": false }, { "id": "c", "text": "the woman", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["Schwester", "Meine", "Anna", "heißt"], "correctOrder": ["Meine", "Schwester", "heißt", "Anna"], "translation": "My sister is called Anna" } },
+                  { "exerciseId": "ab_s1_u7_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "_____ Bruder heißt Thomas.", "context": "Talking about your brother", "blanks": [{ "position": 1, "acceptedAnswers": ["Mein", "mein"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u7_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'Schwester' mean?", "options": [{ "id": "a", "text": "sister", "isCorrect": true }, { "id": "b", "text": "sweater", "isCorrect": false }, { "id": "c", "text": "mother", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e9", "type": "grammar", "instruction": "Choose the correct possessive.", "points": 10, "content": { "rule": "'Mein' changes based on gender: mein (m/n), meine (f/pl).", "question": "_____ Schwester ist nett. (My sister is nice.)", "options": [{ "id": "a", "text": "Meine", "isCorrect": true }, { "id": "b", "text": "Mein", "isCorrect": false }, { "id": "c", "text": "Meinen", "isCorrect": false }], "explanation": "'Schwester' is feminine, so we use 'meine'." } },
+                  { "exerciseId": "ab_s1_u7_e10", "type": "write_response", "instruction": "Translate to English.", "points": 10, "content": { "prompt": "Translate:", "text": "Meine Familie ist groß. Ich habe zwei Brüder und eine Schwester.", "acceptedKeywords": ["family", "big", "two", "brothers", "sister"], "sampleAnswer": "My family is big. I have two brothers and one sister.", "minWords": 5, "maxWords": 30 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u8",
+                "title": "Animals",
+                "order": 8,
+                "topic": "animals",
+                "objectives": ["Name common animals", "Say which animals you like", "Use plural forms"],
+                "newVocabulary": [
+                  { "term": "der Hund", "definition": "dog", "phonetic": "hoont", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "die Katze", "definition": "cat", "phonetic": "KAHT-seh", "partOfSpeech": "noun", "gender": "feminine" },
+                  { "term": "der Vogel", "definition": "bird", "phonetic": "FOH-gel", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "der Fisch", "definition": "fish", "phonetic": "fish", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "das Tier", "definition": "animal", "phonetic": "teer", "partOfSpeech": "noun", "gender": "neuter" }
+                ],
+                "grammarFocus": "Plural formation patterns: -e (Hunde), -en (Katzen), umlaut+e (Vögel)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u8_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Ich habe einen Hund und eine Katze.", "translation": "I have a dog and a cat.", "words": [{ "word": "Ich", "meaning": "I", "phonetic": "ikh", "isNew": false }, { "word": "habe", "meaning": "have", "phonetic": "HAH-beh", "isNew": false }, { "word": "einen", "meaning": "a (masc.)", "phonetic": "AY-nen", "isNew": true }, { "word": "Hund", "meaning": "dog", "phonetic": "hoont", "isNew": true }, { "word": "und", "meaning": "and", "phonetic": "oont", "isNew": false }, { "word": "eine", "meaning": "a (fem.)", "phonetic": "AY-neh", "isNew": true }, { "word": "Katze", "meaning": "cat", "phonetic": "KAHT-seh", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u8_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Hast du ein Haustier?", "translation": "Do you have a pet?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Ja, ich habe einen Hund.", "isCorrect": true }, { "id": "b", "text": "Nein, ich heiße Max.", "isCorrect": false }, { "id": "c", "text": "Danke schön!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Katze", "options": [{ "id": "a", "text": "cat", "isCorrect": true }, { "id": "b", "text": "coffee", "isCorrect": false }, { "id": "c", "text": "cap", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e4", "type": "matching_pairs", "instruction": "Match the animals.", "points": 10, "content": { "pairs": [{ "source": "Hund", "target": "dog" }, { "source": "Katze", "target": "cat" }, { "source": "Vogel", "target": "bird" }, { "source": "Fisch", "target": "fish" }] } },
+                  { "exerciseId": "ab_s1_u8_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "das Tier", "promptLanguage": "target", "options": [{ "id": "a", "text": "animal", "isCorrect": true }, { "id": "b", "text": "door", "isCorrect": false }, { "id": "c", "text": "tea", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["Katze", "habe", "eine", "Ich"], "correctOrder": ["Ich", "habe", "eine", "Katze"], "translation": "I have a cat" } },
+                  { "exerciseId": "ab_s1_u8_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "Ich habe einen _____.", "context": "Talking about your pet dog", "blanks": [{ "position": 1, "acceptedAnswers": ["Hund", "hund"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u8_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What is the plural of 'Tier'?", "options": [{ "id": "a", "text": "Tiere", "isCorrect": true }, { "id": "b", "text": "Tiers", "isCorrect": false }, { "id": "c", "text": "Tieren", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e9", "type": "grammar", "instruction": "Choose the correct article.", "points": 10, "content": { "rule": "In the accusative case, masculine articles change: der → den, ein → einen.", "question": "Ich habe _____ Hund. (I have a dog.)", "options": [{ "id": "a", "text": "einen", "isCorrect": true }, { "id": "b", "text": "ein", "isCorrect": false }, { "id": "c", "text": "eine", "isCorrect": false }], "explanation": "'Hund' is masculine. In the accusative, 'ein' becomes 'einen'." } },
+                  { "exerciseId": "ab_s1_u8_e10", "type": "write_response", "instruction": "Translate to English.", "points": 10, "content": { "prompt": "Translate:", "text": "Ich habe zwei Hunde und drei Fische.", "acceptedKeywords": ["two", "dogs", "three", "fish"], "sampleAnswer": "I have two dogs and three fish.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u9",
+                "title": "Body Parts",
+                "order": 9,
+                "topic": "body_parts",
+                "objectives": ["Name basic body parts", "Describe pain or discomfort simply", "Use definite articles with body parts"],
+                "newVocabulary": [
+                  { "term": "der Kopf", "definition": "head", "phonetic": "kopf", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "die Hand", "definition": "hand", "phonetic": "hant", "partOfSpeech": "noun", "gender": "feminine" },
+                  { "term": "das Auge", "definition": "eye", "phonetic": "OW-geh", "partOfSpeech": "noun", "gender": "neuter" },
+                  { "term": "der Mund", "definition": "mouth", "phonetic": "moont", "partOfSpeech": "noun", "gender": "masculine" },
+                  { "term": "das Ohr", "definition": "ear", "phonetic": "ohr", "partOfSpeech": "noun", "gender": "neuter" }
+                ],
+                "grammarFocus": "Body parts use definite articles, not possessives: 'Mir tut der Kopf weh' (My head hurts)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u9_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Das ist mein Kopf.", "translation": "This is my head.", "words": [{ "word": "Das", "meaning": "this", "phonetic": "dahs", "isNew": false }, { "word": "ist", "meaning": "is", "phonetic": "ist", "isNew": false }, { "word": "mein", "meaning": "my", "phonetic": "myn", "isNew": false }, { "word": "Kopf", "meaning": "head", "phonetic": "kopf", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u9_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Was tut dir weh?", "translation": "What hurts?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Mir tut der Kopf weh.", "isCorrect": true }, { "id": "b", "text": "Ich heiße Maria.", "isCorrect": false }, { "id": "c", "text": "Danke!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Hand", "options": [{ "id": "a", "text": "hand", "isCorrect": true }, { "id": "b", "text": "hat", "isCorrect": false }, { "id": "c", "text": "head", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e4", "type": "matching_pairs", "instruction": "Match the body parts.", "points": 10, "content": { "pairs": [{ "source": "Kopf", "target": "head" }, { "source": "Hand", "target": "hand" }, { "source": "Auge", "target": "eye" }, { "source": "Ohr", "target": "ear" }] } },
+                  { "exerciseId": "ab_s1_u9_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "der Mund", "promptLanguage": "target", "options": [{ "id": "a", "text": "mouth", "isCorrect": true }, { "id": "b", "text": "moon", "isCorrect": false }, { "id": "c", "text": "mind", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["Kopf", "der", "weh", "tut", "Mir"], "correctOrder": ["Mir", "tut", "der", "Kopf", "weh"], "translation": "My head hurts" } },
+                  { "exerciseId": "ab_s1_u9_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "Mir tut _____ Hand weh.", "blanks": [{ "position": 1, "acceptedAnswers": ["die"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u9_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'Auge' mean?", "options": [{ "id": "a", "text": "eye", "isCorrect": true }, { "id": "b", "text": "ear", "isCorrect": false }, { "id": "c", "text": "arm", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e9", "type": "grammar", "instruction": "Choose the correct article.", "points": 10, "content": { "rule": "German uses definite articles (not possessives) with body parts in pain expressions.", "question": "Mir tut _____ Kopf weh.", "options": [{ "id": "a", "text": "der", "isCorrect": true }, { "id": "b", "text": "mein", "isCorrect": false }, { "id": "c", "text": "den", "isCorrect": false }], "explanation": "German uses 'der Kopf' with the dative 'mir' instead of 'mein Kopf' in pain expressions." } },
+                  { "exerciseId": "ab_s1_u9_e10", "type": "write_response", "instruction": "Translate to English.", "points": 10, "content": { "prompt": "Translate:", "text": "Mir tut der Kopf weh und meine Hand tut auch weh.", "acceptedKeywords": ["head", "hurts", "hand", "also"], "sampleAnswer": "My head hurts and my hand also hurts.", "minWords": 4, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u10",
+                "title": "Review & Practice",
+                "order": 10,
+                "topic": "review",
+                "objectives": ["Review all vocabulary from Section 1", "Practice greetings, numbers, colors, and family", "Build confidence with mixed exercises"],
+                "newVocabulary": [],
+                "grammarFocus": "Review: articles (der/die/das), possessives (mein/meine), verb conjugation (ich heiße, ich habe)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 80,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u10_e1", "type": "pronunciation", "instruction": "Listen and read this conversation.", "points": 10, "content": { "sentence": "Hallo! Ich heiße Maria. Ich habe zwei Katzen.", "translation": "Hello! My name is Maria. I have two cats.", "words": [{ "word": "Hallo", "meaning": "hello", "phonetic": "HAH-lo", "isNew": false }, { "word": "Ich", "meaning": "I", "phonetic": "ikh", "isNew": false }, { "word": "heiße", "meaning": "am called", "phonetic": "HY-seh", "isNew": false }, { "word": "Maria", "meaning": "Maria", "phonetic": "ma-REE-ah", "isNew": false }, { "word": "habe", "meaning": "have", "phonetic": "HAH-beh", "isNew": false }, { "word": "zwei", "meaning": "two", "phonetic": "tsvy", "isNew": false }, { "word": "Katzen", "meaning": "cats", "phonetic": "KAHT-sen", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u10_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Guten Tag! Wie heißen Sie?", "translation": "Good day! What is your name?" }, { "speaker": "user", "text": null }, { "speaker": "app", "text": "Freut mich! Wie geht es Ihnen?", "translation": "Nice to meet you! How are you?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Ich heiße Thomas. / Mir geht es gut, danke!", "isCorrect": true }, { "id": "b", "text": "Tschüss! / Auf Wiedersehen!", "isCorrect": false }, { "id": "c", "text": "Rot und blau. / Drei Katzen.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Auf Wiedersehen", "options": [{ "id": "a", "text": "Goodbye", "isCorrect": true }, { "id": "b", "text": "Good morning", "isCorrect": false }, { "id": "c", "text": "Excuse me", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e4", "type": "matching_pairs", "instruction": "Match all the words you've learned.", "points": 10, "content": { "pairs": [{ "source": "Guten Morgen", "target": "Good morning" }, { "source": "die Schwester", "target": "sister" }, { "source": "rot", "target": "red" }, { "source": "fünf", "target": "five" }] } },
+                  { "exerciseId": "ab_s1_u10_e5", "type": "select_translation", "instruction": "Select the correct translation.", "points": 10, "content": { "prompt": "Meine Mutter trinkt Kaffee.", "promptLanguage": "target", "options": [{ "id": "a", "text": "My mother drinks coffee.", "isCorrect": true }, { "id": "b", "text": "My mother is beautiful.", "isCorrect": false }, { "id": "c", "text": "My mother has a cat.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["habe", "Hunde", "Ich", "drei"], "correctOrder": ["Ich", "habe", "drei", "Hunde"], "translation": "I have three dogs" } },
+                  { "exerciseId": "ab_s1_u10_e7", "type": "fill_blank", "instruction": "Fill in the blanks.", "points": 10, "content": { "text": "_____, ich _____ Anna.", "context": "Introducing yourself", "blanks": [{ "position": 1, "acceptedAnswers": ["Hallo", "hallo"], "caseSensitive": false }, { "position": 2, "acceptedAnswers": ["heiße", "heisse"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u10_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "How do you say 'Excuse me' in German?", "options": [{ "id": "a", "text": "Entschuldigung", "isCorrect": true }, { "id": "b", "text": "Auf Wiedersehen", "isCorrect": false }, { "id": "c", "text": "Danke schön", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e9", "type": "grammar", "instruction": "Choose the correct forms.", "points": 10, "content": { "rule": "Review: articles match gender, possessives change with gender.", "question": "_____ Katze ist schwarz. (The cat is black.)", "options": [{ "id": "a", "text": "Die", "isCorrect": true }, { "id": "b", "text": "Der", "isCorrect": false }, { "id": "c", "text": "Das", "isCorrect": false }], "explanation": "'Katze' is feminine, so it takes 'die'." } },
+                  { "exerciseId": "ab_s1_u10_e10", "type": "write_response", "instruction": "Write a short introduction in English based on this German text.", "points": 10, "content": { "prompt": "Read and translate the full paragraph:", "text": "Hallo! Ich heiße Maria. Ich habe eine Schwester und einen Bruder. Meine Katze ist schwarz. Ich trinke gern Kaffee. Auf Wiedersehen!", "acceptedKeywords": ["Maria", "sister", "brother", "cat", "black", "coffee", "goodbye"], "sampleAnswer": "Hello! My name is Maria. I have a sister and a brother. My cat is black. I like to drink coffee. Goodbye!", "minWords": 10, "maxWords": 50 } }
+                ]
+              }
+            ],
+            "checkpoint": {
+              "title": "Section 1 Review: Everyday Basics",
+              "estimatedMinutes": 10,
+              "exercises": [
+                { "exerciseId": "ab_s1_cp_e1", "type": "matching_pairs", "instruction": "Match all the key vocabulary from Section 1.", "points": 20, "content": { "pairs": [{ "source": "Guten Tag", "target": "Good day" }, { "source": "die Familie", "target": "family" }, { "source": "rot", "target": "red" }, { "source": "der Hund", "target": "dog" }, { "source": "fünf", "target": "five" }, { "source": "der Kopf", "target": "head" }] } },
+                { "exerciseId": "ab_s1_cp_e2", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 20, "content": { "question": "Complete: 'Ich _____ Anna und ich habe zwei Katzen.'", "options": [{ "id": "a", "text": "heiße", "isCorrect": true }, { "id": "b", "text": "heißt", "isCorrect": false }, { "id": "c", "text": "ist", "isCorrect": false }] } },
+                { "exerciseId": "ab_s1_cp_e3", "type": "write_response", "instruction": "Write a short self-introduction in English from this German text.", "points": 20, "content": { "prompt": "Translate:", "text": "Guten Tag! Ich heiße Thomas. Ich habe einen Bruder und eine Schwester. Mein Hund ist braun. Ich trinke gern Tee.", "acceptedKeywords": ["Thomas", "brother", "sister", "dog", "brown", "tea"], "sampleAnswer": "Good day! My name is Thomas. I have a brother and a sister. My dog is brown. I like to drink tea.", "minWords": 10, "maxWords": 50 } }
+              ]
+            }
+          },
+          {
+            "id": "ab_s2",
+            "title": "People & Things",
+            "description": "Learn to talk about family, body parts, animals, food and drink",
+            "order": 2,
+            "topicsCovered": ["family_extended", "body_parts_extended", "animals_extended", "food_drink_extended"],
+            "units": []
+          },
+          {
+            "id": "ab_s3",
+            "title": "Daily Routines",
+            "description": "Talk about time, weather, places, and getting around",
+            "order": 3,
+            "topicsCovered": ["time", "weather", "places", "transport"],
+            "units": []
+          },
+          {
+            "id": "ab_s4",
+            "title": "Social Situations",
+            "description": "Handle ordering at a cafe, shopping, asking directions, and dining out",
+            "order": 4,
+            "topicsCovered": ["cafe_ordering", "shopping", "directions", "dining_out"],
+            "units": []
+          },
+          {
+            "id": "ab_s5",
+            "title": "Building Sentences",
+            "description": "Learn present tense verbs, adjectives, describing people, and review everything",
+            "order": 5,
+            "topicsCovered": ["present_tense", "adjectives", "descriptions", "comprehensive_review"],
+            "units": []
+          }
+        ]
+      },
+      {
+        "id": "beginner",
+        "name": "Beginner",
+        "cefrLevel": "A2",
+        "order": 2,
+        "description": "Build on basics — express gratitude, talk about past and future, handle daily situations",
+        "sections": [
+          { "id": "bg_s1", "title": "Social Skills", "description": "Gratitude, apologies, small talk, emotions", "order": 1, "topicsCovered": ["gratitude", "apologies", "small_talk", "emotions"], "units": [] },
+          { "id": "bg_s2", "title": "Past & Future", "description": "Past tense, talking about experiences, making plans", "order": 2, "topicsCovered": ["past_tense", "experiences", "plans"], "units": [] },
+          { "id": "bg_s3", "title": "Daily Life", "description": "Hobbies, sports, housing, work and school", "order": 3, "topicsCovered": ["hobbies", "sports", "housing", "work"], "units": [] },
+          { "id": "bg_s4", "title": "Practical Communication", "description": "Health, complaints, giving advice, phone calls", "order": 4, "topicsCovered": ["health", "complaints", "advice", "phone_calls"], "units": [] },
+          { "id": "bg_s5", "title": "Connecting Ideas", "description": "Conjunctions, expressing opinions, storytelling", "order": 5, "topicsCovered": ["conjunctions", "opinions", "storytelling"], "units": [] }
+        ]
+      },
+      {
+        "id": "intermediate",
+        "name": "Intermediate",
+        "cefrLevel": "B1",
+        "order": 3,
+        "description": "Develop fluency — express opinions, handle professional situations, understand culture",
+        "sections": [
+          { "id": "im_s1", "title": "Opinions & Arguments", "description": "Debates, agreeing/disagreeing, persuasion", "order": 1, "topicsCovered": ["debates", "agreement", "persuasion"], "units": [] },
+          { "id": "im_s2", "title": "Professional Life", "description": "Job interviews, email writing, presentations", "order": 2, "topicsCovered": ["interviews", "emails", "presentations"], "units": [] },
+          { "id": "im_s3", "title": "Culture & Society", "description": "Traditions, holidays, media, current events", "order": 3, "topicsCovered": ["traditions", "holidays", "media", "current_events"], "units": [] },
+          { "id": "im_s4", "title": "Complex Grammar", "description": "Subjunctive, passive voice, relative clauses", "order": 4, "topicsCovered": ["subjunctive", "passive_voice", "relative_clauses"], "units": [] },
+          { "id": "im_s5", "title": "Extended Communication", "description": "Writing letters, summarizing articles, narratives", "order": 5, "topicsCovered": ["letters", "summaries", "narratives"], "units": [] }
+        ]
+      },
+      {
+        "id": "advanced",
+        "name": "Advanced",
+        "cefrLevel": "C1",
+        "order": 4,
+        "description": "Master complex grammar and specialized vocabulary for professional and academic contexts",
+        "sections": [
+          { "id": "ad_s1", "title": "Business & Negotiations", "description": "Formal language, contracts, presentations", "order": 1, "topicsCovered": ["business", "negotiations", "contracts"], "units": [] },
+          { "id": "ad_s2", "title": "Academic & Research", "description": "Scientific writing, citations, formal debate", "order": 2, "topicsCovered": ["academic_writing", "citations", "formal_debate"], "units": [] },
+          { "id": "ad_s3", "title": "Specialized Vocabulary", "description": "Legal, medical, environmental, financial terms", "order": 3, "topicsCovered": ["legal", "medical", "environmental", "financial"], "units": [] },
+          { "id": "ad_s4", "title": "Idiomatic Mastery", "description": "Idioms, expressions, colloquialisms, humor", "order": 4, "topicsCovered": ["idioms", "expressions", "colloquialisms"], "units": [] },
+          { "id": "ad_s5", "title": "Near-Native Fluency", "description": "Literature analysis, essay writing, nuance", "order": 5, "topicsCovered": ["literature", "essays", "nuance"], "units": [] }
+        ]
+      }
+    ],
+    "metadata": {
+      "version": "3.0.0",
+      "lastUpdated": "2026-03-08",
+      "author": "PolyGlot Team"
+    }
+  }
+}

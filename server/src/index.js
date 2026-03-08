@@ -1,16 +1,18 @@
-﻿import express from "express";
+import app from "./app.js";
+import { ensureTables } from "./db/init.js";
 
-const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.get("/api/hello", (_req, res) => {
-  res.json({ message: "Hello from Express" });
-});
+async function startServer() {
+  try {
+    await ensureTables();
+    app.listen(PORT, () => {
+      console.log(`Server listening on http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to initialize database", error);
+    process.exit(1);
+  }
+}
 
-app.get("/", (_req, res) => {
-  res.type("text").send("Server is running. Try /api/hello");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+startServer();

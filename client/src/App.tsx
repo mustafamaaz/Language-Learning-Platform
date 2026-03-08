@@ -1,58 +1,47 @@
-﻿import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { UserPreferencesProvider } from "@/contexts/UserPreferencesContext";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { LoginPage } from "@/pages/LoginPage";
+import { AdminLoginPage } from "@/pages/AdminLoginPage";
+import { ConfigPage } from "@/pages/ConfigPage";
+import { HomePage } from "@/pages/HomePage";
+import { SettingsPage } from "@/pages/SettingsPage";
+import { PlaygroundPage } from "@/pages/PlaygroundPage";
+
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? "";
 
 export default function App() {
-  const [message, setMessage] = useState("Loading...");
-
-  useEffect(() => {
-    let active = true;
-    fetch("/api/hello")
-      .then((res) => res.json())
-      .then((data: { message?: string }) => {
-        if (active) {
-          setMessage(data.message ?? "No message returned");
-        }
-      })
-      .catch(() => {
-        if (active) {
-          setMessage("API unavailable. Is the server running?");
-        }
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <div className="mx-auto flex min-h-screen max-w-3xl flex-col items-start justify-center gap-6 px-6">
-        <div className="space-y-2">
-          <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
-            PolyGlot Dynamic
-          </p>
-          <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-            Language Learning Platform
-          </h1>
-          <p className="text-base text-slate-600">
-            Vite + TypeScript + shadcn/ui on the frontend, Express on the backend.
-          </p>
-        </div>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <BrowserRouter>
+        <AuthProvider>
+          <UserPreferencesProvider>
+            <Routes>
+              {/* Public routes */}
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/admin" element={<AdminLoginPage />} />
 
-        <div className="w-full rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-            API Status
-          </p>
-          <p className="mt-2 text-lg font-medium text-slate-900">{message}</p>
-        </div>
+              {/* Authenticated — config page (no preferences check) */}
+              <Route element={<ProtectedRoute />}>
+                <Route path="/config" element={<ConfigPage />} />
+              </Route>
 
-        <div className="flex items-center gap-3">
-          <Button onClick={() => window.location.reload()}>Refresh</Button>
-          <Button variant="secondary" onClick={() => setMessage("Hello from UI")}>
-            Simulate Frontend Message
-          </Button>
-        </div>
-      </div>
-    </div>
+              {/* Authenticated + must have configured preferences */}
+              <Route element={<ProtectedRoute requireConfig />}>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/settings" element={<SettingsPage />} />
+              </Route>
+
+              {/* Admin-only routes */}
+              <Route element={<ProtectedRoute requiredRole="admin" />}>
+                <Route path="/playground" element={<PlaygroundPage />} />
+              </Route>
+            </Routes>
+          </UserPreferencesProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }

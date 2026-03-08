@@ -64,3 +64,24 @@ Please provide:
     
 
 **Deliverable:** Start by outlining the JSON structure and the Database schema to ensure the data foundation is solid.
+
+## Local Development (Separate Client/Server)
+1. In `server`, install and run:
+`npm install`
+`npm run dev`
+2. In `client`, install and run:
+`npm install`
+`npm run dev`
+
+The client proxies API requests to `http://localhost:3001` via `/api`.
+
+## Database (Postgres via Docker)
+1. From the repo root:
+`docker compose up -d`
+2. Copy `server/.env.example` to `server/.env` and update if needed.
+
+The API initializes the `content` table on startup.
+
+**If you see "password authentication failed for user learning_user"**:
+- If `docker exec learning-platform-postgres psql -U learning_user -d learning_platform -c "SELECT 1"` works, a local Postgres may be conflicting. Docker uses port **5433** to avoid this; ensure `PGPORT=5433` in `server/.env`.
+- If the container was first created with different credentials, reset the volume: `docker compose down -v` then `docker compose up -d`.

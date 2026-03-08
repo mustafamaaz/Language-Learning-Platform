@@ -1,16 +1,4 @@
 {
-  "name": "language-learning-platform",
-  "private": true,
-  "workspaces": [
-    "client",
-    "server"
-  ],
-  "scripts": {
-    "dev": "concurrently -n server,client -c green,cyan \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
-    "build": "npm run build --workspace client",
-    "start": "npm run start --workspace server"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "name": "language-learning-platform-root",
+  "private": true
 }

@@ -1,0 +1,467 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/curriculum.schema.json",
+  "title": "Language Learning Curriculum",
+  "description": "Schema for a structured language learning curriculum with proficiency levels, sections, units, and 10 polymorphic exercise types.",
+  "type": "object",
+  "required": ["curriculum"],
+  "properties": {
+    "curriculum": {
+      "type": "object",
+      "required": [
+        "sourceLanguage",
+        "targetLanguage",
+        "proficiencyLevels",
+        "metadata"
+      ],
+      "properties": {
+        "sourceLanguage": {
+          "$ref": "#/definitions/languageInfo"
+        },
+        "targetLanguage": {
+          "$ref": "#/definitions/languageInfo"
+        },
+        "proficiencyLevels": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/proficiencyLevel" }
+        },
+        "metadata": {
+          "$ref": "#/definitions/metadata"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "languageInfo": {
+      "type": "object",
+      "description": "Describes a language with ISO code and display names.",
+      "required": ["code", "name", "nativeName"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+          "description": "ISO 639-1 language code, optionally with region (e.g. 'en', 'de', 'pt-BR')"
+        },
+        "name": { "type": "string" },
+        "nativeName": { "type": "string" }
+      }
+    },
+
+    "metadata": {
+      "type": "object",
+      "required": ["version", "lastUpdated", "author"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date"
+        },
+        "author": { "type": "string" }
+      }
+    },
+
+    "proficiencyLevel": {
+      "type": "object",
+      "description": "A broad proficiency tier (e.g. Absolute Beginner, Beginner). Contains sections.",
+      "required": ["id", "name", "cefrLevel", "order", "description", "sections"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "cefrLevel": {
+          "type": "string",
+          "enum": ["pre-A1", "A1", "A2", "B1", "B2", "C1", "C2"],
+          "description": "CEFR level mapping"
+        },
+        "order": { "type": "integer", "minimum": 1 },
+        "description": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/section" }
+        }
+      }
+    },
+
+    "section": {
+      "type": "object",
+      "description": "A thematic grouping of units within a proficiency level.",
+      "required": ["id", "title", "description", "order", "topicsCovered", "units"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1 },
+        "topicsCovered": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "units": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/unit" }
+        },
+        "checkpoint": {
+          "$ref": "#/definitions/checkpoint"
+        }
+      }
+    },
+
+    "checkpoint": {
+      "type": "object",
+      "description": "An optional review/assessment at the end of a section.",
+      "required": ["title", "exercises"],
+      "properties": {
+        "title": { "type": "string" },
+        "estimatedMinutes": { "type": "integer", "minimum": 1 },
+        "exercises": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/exercise" }
+        }
+      }
+    },
+
+    "unit": {
+      "type": "object",
+      "description": "A single lesson unit containing vocabulary, grammar focus, and exactly 10 exercises.",
+      "required": [
+        "id",
+        "title",
+        "order",
+        "topic",
+        "objectives",
+        "newVocabulary",
+        "grammarFocus",
+        "estimatedMinutes",
+        "pointsValue",
+        "passThreshold",
+        "exercises"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1 },
+        "topic": { "type": "string" },
+        "objectives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "newVocabulary": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/vocabularyEntry" }
+        },
+        "grammarFocus": { "type": "string" },
+        "culturalNote": { "type": "string" },
+        "estimatedMinutes": { "type": "integer", "minimum": 1 },
+        "pointsValue": { "type": "integer", "minimum": 0 },
+        "passThreshold": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "exercises": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/exercise" },
+          "minItems": 10,
+          "maxItems": 10
+        }
+      }
+    },
+
+    "vocabularyEntry": {
+      "type": "object",
+      "description": "A single vocabulary word introduced in a unit.",
+      "required": ["term", "definition", "phonetic", "partOfSpeech"],
+      "properties": {
+        "term": { "type": "string" },
+        "definition": { "type": "string" },
+        "phonetic": { "type": "string" },
+        "partOfSpeech": {
+          "type": "string",
+          "enum": ["noun", "verb", "adjective", "adverb", "pronoun", "preposition", "conjunction", "interjection", "article", "numeral", "phrase"]
+        },
+        "gender": {
+          "type": ["string", "null"],
+          "description": "Grammatical gender if applicable (e.g. 'masculine', 'feminine', 'neuter')"
+        },
+        "exampleSentence": { "type": "string" },
+        "exampleTranslation": { "type": "string" }
+      }
+    },
+
+    "option": {
+      "type": "object",
+      "required": ["id", "text", "isCorrect"],
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" },
+        "isCorrect": { "type": "boolean" }
+      }
+    },
+
+    "exercise": {
+      "type": "object",
+      "required": ["exerciseId", "type", "instruction", "points", "content"],
+      "properties": {
+        "exerciseId": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": [
+            "pronunciation",
+            "complete_chat",
+            "listen_select",
+            "matching_pairs",
+            "select_translation",
+            "reorder_words",
+            "fill_blank",
+            "multiple_choice",
+            "grammar",
+            "write_response"
+          ]
+        },
+        "instruction": { "type": "string" },
+        "points": { "type": "integer", "minimum": 0 },
+        "timeLimit": { "type": "integer", "minimum": 1 },
+        "hint": { "type": "string" },
+        "explanation": { "type": "string" },
+        "content": { "type": "object" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "pronunciation" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["sentence", "translation", "words"],
+                "properties": {
+                  "sentence": { "type": "string" },
+                  "translation": { "type": "string" },
+                  "audioUrl": { "type": "string" },
+                  "words": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["word", "meaning", "phonetic", "isNew"],
+                      "properties": {
+                        "word": { "type": "string" },
+                        "meaning": { "type": "string" },
+                        "phonetic": { "type": "string" },
+                        "isNew": { "type": "boolean" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "complete_chat" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["dialogue", "options"],
+                "properties": {
+                  "dialogue": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["speaker"],
+                      "properties": {
+                        "speaker": { "type": "string", "enum": ["app", "user"] },
+                        "text": { "type": ["string", "null"] },
+                        "translation": { "type": "string" }
+                      }
+                    }
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/option" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "listen_select" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["transcript", "options"],
+                "properties": {
+                  "audioUrl": { "type": "string" },
+                  "transcript": { "type": "string" },
+                  "options": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/option" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "matching_pairs" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["pairs"],
+                "properties": {
+                  "pairs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["source", "target"],
+                      "properties": {
+                        "source": { "type": "string" },
+                        "target": { "type": "string" }
+                      }
+                    },
+                    "minItems": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "select_translation" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["prompt", "promptLanguage", "options"],
+                "properties": {
+                  "prompt": { "type": "string" },
+                  "promptLanguage": {
+                    "type": "string",
+                    "enum": ["source", "target"]
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/option" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "reorder_words" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["shuffledWords", "correctOrder", "translation"],
+                "properties": {
+                  "shuffledWords": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "correctOrder": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "translation": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "fill_blank" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["text", "blanks"],
+                "properties": {
+                  "text": { "type": "string" },
+                  "context": { "type": "string" },
+                  "blanks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["position", "acceptedAnswers"],
+                      "properties": {
+                        "position": { "type": "integer" },
+                        "acceptedAnswers": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        },
+                        "caseSensitive": { "type": "boolean" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "multiple_choice" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["question", "options"],
+                "properties": {
+                  "question": { "type": "string" },
+                  "options": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/option" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "grammar" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["rule", "question", "options", "explanation"],
+                "properties": {
+                  "rule": { "type": "string" },
+                  "question": { "type": "string" },
+                  "options": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/option" }
+                  },
+                  "explanation": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "write_response" } } },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "required": ["prompt", "text", "acceptedKeywords", "sampleAnswer"],
+                "properties": {
+                  "prompt": { "type": "string" },
+                  "text": { "type": "string" },
+                  "audioUrl": { "type": "string" },
+                  "acceptedKeywords": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "sampleAnswer": { "type": "string" },
+                  "minWords": { "type": "integer", "minimum": 1 },
+                  "maxWords": { "type": "integer", "minimum": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
