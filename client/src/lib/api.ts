@@ -7,7 +7,7 @@ export function setTokenGetter(fn: () => Promise<string | null>) {
   _getToken = fn;
 }
 
-async function authHeaders(): Promise<Record<string, string>> {
+export async function authHeaders(): Promise<Record<string, string>> {
   if (!_getToken) return {};
   const token = await _getToken();
   return token ? { Authorization: `Bearer ${token}` } : {};
@@ -205,6 +205,9 @@ export async function getSampleSchema() {
   return apiRequest("/api/playground/schema");
 }
 
-export async function getSampleResources() {
-  return apiRequest("/api/playground/resources");
+export async function getSampleResources(file: "default" | "en-en" = "default") {
+  const url = file === "en-en"
+    ? "/api/playground/resources?file=en-en"
+    : "/api/playground/resources";
+  return apiRequest(url);
 }

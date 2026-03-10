@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import type {
   Exercise,
   ExerciseOption,
@@ -8,6 +8,9 @@ import type {
   FillBlank,
 } from "@/types/curriculum";
 import { Button } from "@/components/ui/button";
+import { SpeakButton } from "@/components/ui/SpeakButton";
+import { SpecialCharBar } from "@/components/ui/SpecialCharBar";
+import { fuzzyMatch, fuzzyIncludes } from "@/lib/textNormalize";
 
 const EMPTY_ARRAY: any[] = [];
 
@@ -17,6 +20,7 @@ type ExerciseCardProps = {
   totalCount: number;
   isCompleted: boolean;
   isLast: boolean;
+  targetLang: string;
   onComplete: (exerciseId: string) => void;
   onNext: () => void;
   onFinish: () => void;
@@ -28,6 +32,7 @@ export function ExerciseCard({
   totalCount,
   isCompleted,
   isLast,
+  targetLang,
   onComplete,
   onNext,
   onFinish,
@@ -75,6 +80,7 @@ export function ExerciseCard({
         <div className="mt-5">
           <ExerciseRenderer
             exercise={exercise}
+            targetLang={targetLang}
             onCorrect={handleCorrect}
             onWrong={handleWrong}
             isCompleted={isCompleted || status === "correct"}
@@ -125,33 +131,34 @@ export function ExerciseCard({
 
 type RendererProps = {
   exercise: Exercise;
+  targetLang: string;
   isCompleted: boolean;
   onCorrect: () => void;
   onWrong: () => void;
 };
 
-function ExerciseRenderer({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function ExerciseRenderer({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   switch (exercise.type) {
     case "pronunciation":
-      return <PronunciationExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} />;
+      return <PronunciationExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} />;
     case "complete_chat":
-      return <CompleteChatExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <CompleteChatExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "listen_select":
-      return <ListenSelectExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <ListenSelectExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "matching_pairs":
-      return <MatchingPairsExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} />;
+      return <MatchingPairsExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} />;
     case "select_translation":
-      return <SelectTranslationExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <SelectTranslationExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "reorder_words":
-      return <ReorderWordsExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <ReorderWordsExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "fill_blank":
-      return <FillBlankExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <FillBlankExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "multiple_choice":
-      return <MultipleChoiceExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <MultipleChoiceExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "grammar":
-      return <GrammarExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
+      return <GrammarExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} onWrong={onWrong} />;
     case "write_response":
-      return <WriteResponseExercise exercise={exercise} isCompleted={isCompleted} onCorrect={onCorrect} />;
+      return <WriteResponseExercise exercise={exercise} targetLang={targetLang} isCompleted={isCompleted} onCorrect={onCorrect} />;
     default:
       return <p className="text-sm text-slate-500">Unsupported exercise type.</p>;
   }
@@ -161,44 +168,54 @@ function ExerciseRenderer({ exercise, isCompleted, onCorrect, onWrong }: Rendere
    1. Pronunciation — word-by-word breakdown
    ──────────────────────────────────────────────────────────── */
 
-function PronunciationExercise({ exercise, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
+function PronunciationExercise({ exercise, targetLang, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
   const content = exercise.content ?? {};
   const words = (content.words as PronunciationWord[]) ?? EMPTY_ARRAY;
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-        <p className="text-lg font-semibold text-slate-900">{content.sentence}</p>
-        {content.translation && (
-          <p className="mt-1 text-sm text-slate-500">{content.translation}</p>
+      <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+        <div className="flex-1">
+          <p className="text-lg font-semibold text-slate-900">{content.sentence}</p>
+          {content.translation && (
+            <p className="mt-1 text-sm text-slate-500">{content.translation}</p>
+          )}
+        </div>
+        {content.sentence && (
+          <SpeakButton text={content.sentence} lang={targetLang} audioUrl={content.audioUrl} />
         )}
       </div>
 
       <div className="flex flex-wrap gap-2">
         {words.map((w, i) => (
-          <button
-            key={`${w.word}-${i}`}
-            type="button"
-            onClick={() => setExpandedIdx(expandedIdx === i ? null : i)}
-            className={`rounded-lg border px-3 py-1.5 text-sm transition ${
-              w.isNew
-                ? "border-amber-300 bg-amber-50 font-semibold text-amber-800"
-                : "border-slate-200 bg-white text-slate-700"
-            } ${expandedIdx === i ? "ring-2 ring-blue-300" : ""}`}
-          >
-            {w.word}
-          </button>
+          <div key={`${w.word}-${i}`} className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setExpandedIdx(expandedIdx === i ? null : i)}
+              className={`rounded-lg border px-3 py-1.5 text-sm transition ${
+                w.isNew
+                  ? "border-amber-300 bg-amber-50 font-semibold text-amber-800"
+                  : "border-slate-200 bg-white text-slate-700"
+              } ${expandedIdx === i ? "ring-2 ring-blue-300" : ""}`}
+            >
+              {w.word}
+            </button>
+            <SpeakButton text={w.word} lang={targetLang} size="sm" />
+          </div>
         ))}
       </div>
 
       {expandedIdx !== null && words[expandedIdx] && (
-        <div className="rounded-lg border border-blue-100 bg-blue-50 px-4 py-2 text-sm">
-          <span className="font-semibold text-blue-800">{words[expandedIdx].word}</span>
-          <span className="mx-2 text-blue-300">&middot;</span>
-          <span className="text-blue-700">{words[expandedIdx].meaning}</span>
-          <span className="mx-2 text-blue-300">&middot;</span>
-          <span className="font-mono text-xs text-blue-600">[{words[expandedIdx].phonetic}]</span>
+        <div className="flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50 px-4 py-2 text-sm">
+          <div className="flex-1">
+            <span className="font-semibold text-blue-800">{words[expandedIdx].word}</span>
+            <span className="mx-2 text-blue-300">&middot;</span>
+            <span className="text-blue-700">{words[expandedIdx].meaning}</span>
+            <span className="mx-2 text-blue-300">&middot;</span>
+            <span className="font-mono text-xs text-blue-600">[{words[expandedIdx].phonetic}]</span>
+          </div>
+          <SpeakButton text={words[expandedIdx].word} lang={targetLang} size="sm" />
         </div>
       )}
 
@@ -213,7 +230,7 @@ function PronunciationExercise({ exercise, isCompleted, onCorrect }: Omit<Render
    2. Complete Chat — dialogue with option selection
    ──────────────────────────────────────────────────────────── */
 
-function CompleteChatExercise({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function CompleteChatExercise({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   const content = exercise.content ?? {};
   const dialogue = (content.dialogue as DialogueLine[]) ?? EMPTY_ARRAY;
   const options = (content.options as ExerciseOption[]) ?? EMPTY_ARRAY;
@@ -231,16 +248,23 @@ function CompleteChatExercise({ exercise, isCompleted, onCorrect, onWrong }: Ren
         {dialogue.map((line, i) => (
           <div key={i} className={`flex ${line.speaker === "user" ? "justify-end" : "justify-start"}`}>
             {line.text ? (
-              <div className={`max-w-[80%] rounded-xl px-3 py-2 text-sm ${
-                line.speaker === "app"
-                  ? "bg-white text-slate-800 border border-slate-200"
-                  : "bg-blue-500 text-white"
+              <div className={`flex items-start gap-1.5 max-w-[85%] ${
+                line.speaker === "app" ? "" : "flex-row-reverse"
               }`}>
-                <p>{line.text}</p>
-                {line.translation && (
-                  <p className={`mt-0.5 text-xs ${line.speaker === "app" ? "text-slate-400" : "text-blue-100"}`}>
-                    {line.translation}
-                  </p>
+                <div className={`rounded-xl px-3 py-2 text-sm ${
+                  line.speaker === "app"
+                    ? "bg-white text-slate-800 border border-slate-200"
+                    : "bg-blue-500 text-white"
+                }`}>
+                  <p>{line.text}</p>
+                  {line.translation && (
+                    <p className={`mt-0.5 text-xs ${line.speaker === "app" ? "text-slate-400" : "text-blue-100"}`}>
+                      {line.translation}
+                    </p>
+                  )}
+                </div>
+                {line.speaker === "app" && (
+                  <SpeakButton text={line.text} lang={targetLang} size="sm" className="mt-1" />
                 )}
               </div>
             ) : (
@@ -279,7 +303,7 @@ function CompleteChatExercise({ exercise, isCompleted, onCorrect, onWrong }: Ren
    3. Listen & Select — audio comprehension
    ──────────────────────────────────────────────────────────── */
 
-function ListenSelectExercise({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function ListenSelectExercise({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   const content = exercise.content ?? {};
   const options = (content.options as ExerciseOption[]) ?? EMPTY_ARRAY;
   const transcript = (content.transcript as string) ?? "";
@@ -295,14 +319,10 @@ function ListenSelectExercise({ exercise, isCompleted, onCorrect, onWrong }: Ren
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707A1 1 0 0112 5.414v13.172a1 1 0 01-1.707.707L5.586 15z" />
-          </svg>
-        </div>
+        <SpeakButton text={transcript} lang={targetLang} audioUrl={content.audioUrl} />
         <div>
-          <p className="text-sm font-medium text-slate-600">Listen to the audio</p>
-          <p className="text-xs text-slate-400">(Audio playback requires integration)</p>
+          <p className="text-sm font-medium text-slate-600">Tap to listen</p>
+          <p className="text-xs text-slate-400">Listen carefully, then choose the correct answer</p>
         </div>
         <button
           type="button"
@@ -346,7 +366,7 @@ function ListenSelectExercise({ exercise, isCompleted, onCorrect, onWrong }: Ren
    4. Matching Pairs — tap pairs to match
    ──────────────────────────────────────────────────────────── */
 
-function MatchingPairsExercise({ exercise, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
+function MatchingPairsExercise({ exercise, targetLang, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
   const content = exercise.content ?? {};
   const pairs = (content.pairs as MatchingPair[]) ?? EMPTY_ARRAY;
 
@@ -391,23 +411,25 @@ function MatchingPairsExercise({ exercise, isCompleted, onCorrect }: Omit<Render
         <div className="space-y-2">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Source</p>
           {pairs.map((p, i) => (
-            <button
-              key={`s-${i}`}
-              type="button"
-              onClick={() => handleSourceClick(i)}
-              disabled={isCompleted || matched.has(i)}
-              className={`w-full rounded-lg border px-3 py-2 text-left text-sm transition ${
-                matched.has(i)
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-600 line-through"
-                  : selectedSource === i
-                    ? "border-blue-400 bg-blue-50 font-semibold text-blue-800"
-                    : wrongPair?.source === i
-                      ? "border-rose-300 bg-rose-50"
-                      : "border-slate-200 bg-white"
-              }`}
-            >
-              {p.source}
-            </button>
+            <div key={`s-${i}`} className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => handleSourceClick(i)}
+                disabled={isCompleted || matched.has(i)}
+                className={`flex-1 rounded-lg border px-3 py-2 text-left text-sm transition ${
+                  matched.has(i)
+                    ? "border-emerald-200 bg-emerald-50 text-emerald-600 line-through"
+                    : selectedSource === i
+                      ? "border-blue-400 bg-blue-50 font-semibold text-blue-800"
+                      : wrongPair?.source === i
+                        ? "border-rose-300 bg-rose-50"
+                        : "border-slate-200 bg-white"
+                }`}
+              >
+                {p.source}
+              </button>
+              <SpeakButton text={p.source} lang={targetLang} size="sm" />
+            </div>
           ))}
         </div>
         <div className="space-y-2">
@@ -447,7 +469,7 @@ function MatchingPairsExercise({ exercise, isCompleted, onCorrect }: Omit<Render
    5. Select Translation — pick the correct translation
    ──────────────────────────────────────────────────────────── */
 
-function SelectTranslationExercise({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function SelectTranslationExercise({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   const content = exercise.content ?? {};
   const prompt = (content.prompt as string) ?? "";
   const options = (content.options as ExerciseOption[]) ?? EMPTY_ARRAY;
@@ -461,11 +483,16 @@ function SelectTranslationExercise({ exercise, isCompleted, onCorrect, onWrong }
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-        <p className="text-lg font-semibold text-slate-900">{prompt}</p>
-        <p className="mt-0.5 text-xs text-slate-400">
-          Translate {content.promptLanguage === "target" ? "from target language" : "from source language"}
-        </p>
+      <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+        <div className="flex-1">
+          <p className="text-lg font-semibold text-slate-900">{prompt}</p>
+          <p className="mt-0.5 text-xs text-slate-400">
+            Translate {content.promptLanguage === "target" ? "from target language" : "from source language"}
+          </p>
+        </div>
+        {content.promptLanguage === "target" && prompt && (
+          <SpeakButton text={prompt} lang={targetLang} />
+        )}
       </div>
 
       <div className="grid gap-2">
@@ -564,11 +591,13 @@ function ReorderWordsExercise({ exercise, isCompleted, onCorrect, onWrong }: Ren
    7. Fill in the Blank
    ──────────────────────────────────────────────────────────── */
 
-function FillBlankExercise({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function FillBlankExercise({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   const content = exercise.content ?? {};
   const text = (content.text as string) ?? "";
   const blanks = (content.blanks as FillBlank[]) ?? EMPTY_ARRAY;
   const [answers, setAnswers] = useState<string[]>(blanks.map(() => ""));
+  const [activeBlank, setActiveBlank] = useState(0);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const parts = useMemo(() => text.split(/_{3,}/g), [text]);
 
@@ -580,12 +609,29 @@ function FillBlankExercise({ exercise, isCompleted, onCorrect, onWrong }: Render
     });
   };
 
+  const handleInsertChar = useCallback(
+    (char: string) => {
+      const input = inputRefs.current[activeBlank];
+      if (!input || isCompleted) return;
+      const start = input.selectionStart ?? answers[activeBlank].length;
+      const end = input.selectionEnd ?? start;
+      const current = answers[activeBlank];
+      const updated = current.slice(0, start) + char + current.slice(end);
+      handleChange(activeBlank, updated);
+      requestAnimationFrame(() => {
+        input.focus();
+        const pos = start + char.length;
+        input.setSelectionRange(pos, pos);
+      });
+    },
+    [activeBlank, answers, isCompleted]
+  );
+
   const handleCheck = () => {
     const isCorrect = blanks.every((blank, index) => {
       const answer = (answers[index] ?? "").trim();
       const accepted = blank.acceptedAnswers ?? [];
-      if (blank.caseSensitive) return accepted.includes(answer);
-      return accepted.some((v) => v.toLowerCase() === answer.toLowerCase());
+      return accepted.some((v) => fuzzyMatch(answer, v, blank.caseSensitive));
     });
     isCorrect ? onCorrect() : onWrong();
   };
@@ -595,15 +641,20 @@ function FillBlankExercise({ exercise, isCompleted, onCorrect, onWrong }: Render
       {content.context && (
         <p className="text-xs text-slate-400">{content.context}</p>
       )}
+
+      <SpecialCharBar lang={targetLang} onInsert={handleInsertChar} />
+
       <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700">
         {parts.map((part, index) => (
           <span key={`part-${index}`}>
             {part}
             {index < blanks.length ? (
               <input
+                ref={(el) => { inputRefs.current[index] = el; }}
                 type="text"
                 value={answers[index]}
                 onChange={(e) => handleChange(index, e.target.value)}
+                onFocus={() => setActiveBlank(index)}
                 disabled={isCompleted}
                 className="mx-1 inline-flex w-24 rounded-md border border-slate-300 px-2 py-1 text-sm"
               />
@@ -667,7 +718,7 @@ function MultipleChoiceExercise({ exercise, isCompleted, onCorrect, onWrong }: R
    9. Grammar — focused grammar practice with rule display
    ──────────────────────────────────────────────────────────── */
 
-function GrammarExercise({ exercise, isCompleted, onCorrect, onWrong }: RendererProps) {
+function GrammarExercise({ exercise, targetLang, isCompleted, onCorrect, onWrong }: RendererProps) {
   const content = exercise.content ?? {};
   const rule = (content.rule as string) ?? "";
   const question = (content.question as string) ?? "";
@@ -691,9 +742,10 @@ function GrammarExercise({ exercise, isCompleted, onCorrect, onWrong }: Renderer
         </div>
       )}
 
-      <p className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700">
-        {question}
-      </p>
+      <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+        <p className="flex-1">{question}</p>
+        {question && <SpeakButton text={question} lang={targetLang} size="sm" />}
+      </div>
 
       <div className="grid gap-2">
         {options.map((opt) => (
@@ -728,7 +780,7 @@ function GrammarExercise({ exercise, isCompleted, onCorrect, onWrong }: Renderer
    10. Write Response — read/listen and write summary
    ──────────────────────────────────────────────────────────── */
 
-function WriteResponseExercise({ exercise, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
+function WriteResponseExercise({ exercise, targetLang, isCompleted, onCorrect }: Omit<RendererProps, "onWrong">) {
   const content = exercise.content ?? {};
   const promptText = (content.prompt as string) ?? "";
   const sourceText = (content.text as string) ?? "";
@@ -737,15 +789,32 @@ function WriteResponseExercise({ exercise, isCompleted, onCorrect }: Omit<Render
   const minWords = (content.minWords as number) ?? 1;
   const [userInput, setUserInput] = useState("");
   const [showSample, setShowSample] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const wordCount = userInput.trim().split(/\s+/).filter(Boolean).length;
+
+  const handleInsertChar = useCallback(
+    (char: string) => {
+      const ta = textareaRef.current;
+      if (!ta || isCompleted) return;
+      const start = ta.selectionStart ?? userInput.length;
+      const end = ta.selectionEnd ?? start;
+      const updated = userInput.slice(0, start) + char + userInput.slice(end);
+      setUserInput(updated);
+      requestAnimationFrame(() => {
+        ta.focus();
+        const pos = start + char.length;
+        ta.setSelectionRange(pos, pos);
+      });
+    },
+    [userInput, isCompleted]
+  );
 
   const handleSubmit = () => {
     if (wordCount < minWords) return;
 
-    const lowerInput = userInput.toLowerCase();
     const matchedKeywords = acceptedKeywords.filter((kw) =>
-      lowerInput.includes(kw.toLowerCase())
+      fuzzyIncludes(userInput, kw)
     );
 
     if (matchedKeywords.length >= Math.ceil(acceptedKeywords.length * 0.4)) {
@@ -762,11 +831,17 @@ function WriteResponseExercise({ exercise, isCompleted, onCorrect }: Omit<Render
         <p className="text-sm text-slate-600">{promptText}</p>
       )}
 
-      <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-        <p className="text-base font-medium text-slate-900">{sourceText}</p>
+      <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+        <p className="flex-1 text-base font-medium text-slate-900">{sourceText}</p>
+        {sourceText && (
+          <SpeakButton text={sourceText} lang={targetLang} audioUrl={content.audioUrl} />
+        )}
       </div>
 
+      <SpecialCharBar lang={targetLang} onInsert={handleInsertChar} />
+
       <textarea
+        ref={textareaRef}
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
         disabled={isCompleted}

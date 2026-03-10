@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import type { ProficiencyLevel, Section, Unit } from "@/types/curriculum";
 import { Button } from "@/components/ui/button";
+import { SpeakButton } from "@/components/ui/SpeakButton";
 import { ExerciseCard } from "@/components/game/ExerciseCard";
 
 export type SelectedUnit = {
@@ -13,6 +14,7 @@ type LevelPlayerProps = {
   proficiency: ProficiencyLevel;
   section: Section;
   unit: Unit;
+  targetLang: string;
   isCompleted: boolean;
   onCompleteLevel: () => void;
   onBack: () => void;
@@ -22,6 +24,7 @@ export function LevelPlayer({
   proficiency,
   section,
   unit,
+  targetLang,
   isCompleted,
   onCompleteLevel,
   onBack,
@@ -111,8 +114,9 @@ export function LevelPlayer({
             {unit.newVocabulary.map((v) => (
               <span
                 key={v.term}
-                className="rounded-full border border-amber-200 bg-white px-3 py-1 text-xs font-medium text-amber-800"
+                className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-white py-1 pl-1.5 pr-3 text-xs font-medium text-amber-800"
               >
+                <SpeakButton text={v.term} lang={targetLang} size="sm" />
                 {v.term} — {v.definition}
               </span>
             ))}
@@ -138,6 +142,7 @@ export function LevelPlayer({
           totalCount={totalExercises}
           isCompleted={isCurrentCompleted}
           isLast={isLastExercise}
+          targetLang={targetLang}
           onComplete={handleExerciseComplete}
           onNext={handleNext}
           onFinish={handleFinish}

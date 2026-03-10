@@ -1,0 +1,354 @@
+{
+  "curriculum": {
+    "sourceLanguage": {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English"
+    },
+    "targetLanguage": {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English"
+    },
+    "proficiencyLevels": [
+      {
+        "id": "absolute_beginner",
+        "name": "Absolute Beginner",
+        "cefrLevel": "A1",
+        "order": 1,
+        "description": "Start from zero — learn the alphabet, basic greetings, and survival phrases in English",
+        "sections": [
+          {
+            "id": "ab_s1",
+            "title": "Everyday Basics",
+            "description": "Learn essential words and phrases for daily life in English",
+            "order": 1,
+            "topicsCovered": ["greetings", "numbers", "colors", "alphabet"],
+            "units": [
+              {
+                "id": "ab_s1_u1",
+                "title": "Greetings & Introductions",
+                "order": 1,
+                "topic": "greetings",
+                "objectives": [
+                  "Say hello and goodbye in formal and informal settings",
+                  "Introduce yourself with your name",
+                  "Ask someone their name"
+                ],
+                "newVocabulary": [
+                  { "term": "Hello", "definition": "a greeting", "phonetic": "huh-LOH", "partOfSpeech": "interjection", "gender": null, "exampleSentence": "Hello, how are you?", "exampleTranslation": "Hello, how are you?" },
+                  { "term": "Hi", "definition": "informal hello", "phonetic": "hy", "partOfSpeech": "interjection", "gender": null, "exampleSentence": "Hi, nice to meet you!", "exampleTranslation": "Hi, nice to meet you!" },
+                  { "term": "Good morning", "definition": "greeting used before noon", "phonetic": "good MOR-ning", "partOfSpeech": "phrase", "gender": null, "exampleSentence": "Good morning! How are you?", "exampleTranslation": "Good morning! How are you?" },
+                  { "term": "Goodbye", "definition": "a farewell", "phonetic": "good-BY", "partOfSpeech": "interjection", "gender": null, "exampleSentence": "Goodbye, see you tomorrow!", "exampleTranslation": "Goodbye, see you tomorrow!" },
+                  { "term": "My name is", "definition": "phrase to introduce yourself", "phonetic": "my naym iz", "partOfSpeech": "phrase", "gender": null, "exampleSentence": "My name is Anna.", "exampleTranslation": "My name is Anna." },
+                  { "term": "Thank you", "definition": "expression of gratitude", "phonetic": "thangk yoo", "partOfSpeech": "phrase", "gender": null, "exampleSentence": "Thank you very much!", "exampleTranslation": "Thank you very much!" },
+                  { "term": "Please", "definition": "polite word when asking", "phonetic": "pleez", "partOfSpeech": "interjection", "gender": null, "exampleSentence": "Please help me.", "exampleTranslation": "Please help me." },
+                  { "term": "You're welcome", "definition": "reply to thank you", "phonetic": "yoor WEL-kum", "partOfSpeech": "phrase", "gender": null, "exampleSentence": "You're welcome!", "exampleTranslation": "You're welcome!" }
+                ],
+                "grammarFocus": "Basic sentence structure: Subject + Verb (I am / My name is...)",
+                "culturalNote": "In English, 'Hello' and 'Hi' are both common. 'Hi' is more casual. 'Good morning' is used before noon.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u1_e1", "type": "pronunciation", "instruction": "Listen and read the sentence. Tap each word to see its meaning.", "points": 10, "content": { "sentence": "Hello, my name is Anna.", "translation": "A greeting and self-introduction.", "words": [{ "word": "Hello", "meaning": "a greeting", "phonetic": "huh-LOH", "isNew": true }, { "word": "my", "meaning": "belonging to me", "phonetic": "my", "isNew": true }, { "word": "name", "meaning": "what someone is called", "phonetic": "naym", "isNew": true }, { "word": "is", "meaning": "be (for he/she/it)", "phonetic": "iz", "isNew": true }, { "word": "Anna", "meaning": "Anna", "phonetic": "AH-nuh", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u1_e2", "type": "complete_chat", "instruction": "Complete the conversation by choosing the correct response.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Hello! What is your name?", "translation": "Hello! What is your name?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "My name is Maria.", "isCorrect": true }, { "id": "b", "text": "Thank you very much.", "isCorrect": false }, { "id": "c", "text": "Goodbye!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u1_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Good morning", "options": [{ "id": "a", "text": "A greeting used before noon", "isCorrect": true }, { "id": "b", "text": "A farewell", "isCorrect": false }, { "id": "c", "text": "A question", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u1_e4", "type": "matching_pairs", "instruction": "Match the words with their meanings.", "points": 10, "content": { "pairs": [{ "source": "Hello", "target": "a greeting" }, { "source": "Thank you", "target": "expression of gratitude" }, { "source": "Please", "target": "polite word when asking" }, { "source": "Goodbye", "target": "a farewell" }] } },
+                  { "exerciseId": "ab_s1_u1_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "Goodbye!", "promptLanguage": "target", "options": [{ "id": "a", "text": "A farewell", "isCorrect": true }, { "id": "b", "text": "A greeting", "isCorrect": false }, { "id": "c", "text": "A thank-you", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u1_e6", "type": "reorder_words", "instruction": "Arrange the words to form a correct sentence.", "points": 10, "content": { "shuffledWords": ["name", "My", "Anna", "is"], "correctOrder": ["My", "name", "is", "Anna"], "translation": "My name is Anna" } },
+                  { "exerciseId": "ab_s1_u1_e7", "type": "fill_blank", "instruction": "Fill in the blank with the correct word.", "points": 10, "hint": "Think about how to say your name in English.", "content": { "text": "My _____ is Maria.", "context": "Introducing yourself", "blanks": [{ "position": 1, "acceptedAnswers": ["name"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u1_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'Hello' mean?", "options": [{ "id": "a", "text": "A greeting", "isCorrect": true }, { "id": "b", "text": "A farewell", "isCorrect": false }, { "id": "c", "text": "A thank-you", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u1_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "We use 'My name is' to introduce ourselves. 'Name' is a noun.", "question": "_____ name is Thomas. (Introducing yourself)", "options": [{ "id": "a", "text": "My", "isCorrect": true }, { "id": "b", "text": "I", "isCorrect": false }, { "id": "c", "text": "Me", "isCorrect": false }], "explanation": "'My' shows possession. We say 'My name is...' not 'I name is...'." } },
+                  { "exerciseId": "ab_s1_u1_e10", "type": "write_response", "instruction": "Read the text and write what it means in your own words.", "points": 10, "content": { "prompt": "Read the following and explain in simple English:", "text": "Hello! My name is Maria. Good morning!", "acceptedKeywords": ["hello", "name", "Maria", "good", "morning", "greeting"], "sampleAnswer": "This is a greeting. The person says hello, introduces herself as Maria, and says good morning.", "minWords": 5, "maxWords": 30 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u2",
+                "title": "Numbers 1-20",
+                "order": 2,
+                "topic": "numbers",
+                "objectives": ["Count from 1 to 20 in English", "Recognize written and spoken numbers", "Use numbers in simple sentences"],
+                "newVocabulary": [
+                  { "term": "one", "definition": "the number 1", "phonetic": "wun", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "two", "definition": "the number 2", "phonetic": "too", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "three", "definition": "the number 3", "phonetic": "three", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "four", "definition": "the number 4", "phonetic": "for", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "five", "definition": "the number 5", "phonetic": "fyv", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "ten", "definition": "the number 10", "phonetic": "ten", "partOfSpeech": "numeral", "gender": null },
+                  { "term": "twenty", "definition": "the number 20", "phonetic": "TWEN-tee", "partOfSpeech": "numeral", "gender": null }
+                ],
+                "grammarFocus": "Number words and how to use them in sentences (I have two...)",
+                "culturalNote": "In English we count on our fingers. Numbers are used everywhere: ages, prices, phone numbers.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u2_e1", "type": "pronunciation", "instruction": "Listen and read the numbers.", "points": 10, "content": { "sentence": "One, two, three, four, five", "translation": "The numbers 1 through 5.", "words": [{ "word": "One", "meaning": "1", "phonetic": "wun", "isNew": true }, { "word": "two", "meaning": "2", "phonetic": "too", "isNew": true }, { "word": "three", "meaning": "3", "phonetic": "three", "isNew": true }, { "word": "four", "meaning": "4", "phonetic": "for", "isNew": true }, { "word": "five", "meaning": "5", "phonetic": "fyv", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u2_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "How many siblings do you have?", "translation": "How many siblings do you have?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "I have two siblings.", "isCorrect": true }, { "id": "b", "text": "My name is Anna.", "isCorrect": false }, { "id": "c", "text": "Good morning!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u2_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "seven", "options": [{ "id": "a", "text": "the number 7", "isCorrect": true }, { "id": "b", "text": "the number 6", "isCorrect": false }, { "id": "c", "text": "the number 9", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u2_e4", "type": "matching_pairs", "instruction": "Match the number words with their meanings.", "points": 10, "content": { "pairs": [{ "source": "one", "target": "1" }, { "source": "three", "target": "3" }, { "source": "seven", "target": "7" }, { "source": "ten", "target": "10" }] } },
+                  { "exerciseId": "ab_s1_u2_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "twenty", "promptLanguage": "target", "options": [{ "id": "a", "text": "the number 20", "isCorrect": true }, { "id": "b", "text": "the number 12", "isCorrect": false }, { "id": "c", "text": "the number 2", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u2_e6", "type": "reorder_words", "instruction": "Arrange the words to form a correct sentence.", "points": 10, "content": { "shuffledWords": ["have", "I", "siblings", "two"], "correctOrder": ["I", "have", "two", "siblings"], "translation": "I have two siblings" } },
+                  { "exerciseId": "ab_s1_u2_e7", "type": "fill_blank", "instruction": "Fill in the blank with the correct number word.", "points": 10, "hint": "The number in parentheses is your clue.", "content": { "text": "I have _____ siblings. (2)", "context": "Talking about family", "blanks": [{ "position": 1, "acceptedAnswers": ["two"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u2_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What number is 'five'?", "options": [{ "id": "a", "text": "5", "isCorrect": true }, { "id": "b", "text": "4", "isCorrect": false }, { "id": "c", "text": "15", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u2_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "With 'I' we use 'have'. With 'he/she' we use 'has'.", "question": "I _____ three cats. (I have three cats.)", "options": [{ "id": "a", "text": "have", "isCorrect": true }, { "id": "b", "text": "has", "isCorrect": false }, { "id": "c", "text": "having", "isCorrect": false }], "explanation": "'Have' is used with 'I', 'you', 'we', 'they'. 'Has' is used with 'he', 'she', 'it'." } },
+                  { "exerciseId": "ab_s1_u2_e10", "type": "write_response", "instruction": "Read the text and write what it means.", "points": 10, "content": { "prompt": "Read the following and write what it means:", "text": "I have five books and three pens.", "acceptedKeywords": ["five", "books", "three", "pens"], "sampleAnswer": "I have five books and three pens.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u3",
+                "title": "Colors & Descriptions",
+                "order": 3,
+                "topic": "colors",
+                "objectives": ["Name basic colors in English", "Use colors as adjectives", "Describe objects using colors"],
+                "newVocabulary": [
+                  { "term": "red", "definition": "the color of blood", "phonetic": "red", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "blue", "definition": "the color of the sky", "phonetic": "bloo", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "green", "definition": "the color of grass", "phonetic": "green", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "yellow", "definition": "the color of the sun", "phonetic": "YEL-oh", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "black", "definition": "the darkest color", "phonetic": "blak", "partOfSpeech": "adjective", "gender": null },
+                  { "term": "white", "definition": "the lightest color", "phonetic": "wyt", "partOfSpeech": "adjective", "gender": null }
+                ],
+                "grammarFocus": "Adjective placement: The car is red. / the red car",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u3_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "The car is red.", "translation": "Describing the color of a car.", "words": [{ "word": "The", "meaning": "definite article", "phonetic": "thuh", "isNew": false }, { "word": "car", "meaning": "a vehicle", "phonetic": "kahr", "isNew": true }, { "word": "is", "meaning": "be verb", "phonetic": "iz", "isNew": false }, { "word": "red", "meaning": "color", "phonetic": "red", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u3_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "What color is your car?", "translation": "What color is your car?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "My car is blue.", "isCorrect": true }, { "id": "b", "text": "I have two.", "isCorrect": false }, { "id": "c", "text": "Good morning!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u3_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "green", "options": [{ "id": "a", "text": "the color of grass", "isCorrect": true }, { "id": "b", "text": "the color of wood", "isCorrect": false }, { "id": "c", "text": "the color of snow", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u3_e4", "type": "matching_pairs", "instruction": "Match the colors with their descriptions.", "points": 10, "content": { "pairs": [{ "source": "red", "target": "color of blood" }, { "source": "blue", "target": "color of sky" }, { "source": "yellow", "target": "color of sun" }, { "source": "black", "target": "darkest color" }] } },
+                  { "exerciseId": "ab_s1_u3_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "white", "promptLanguage": "target", "options": [{ "id": "a", "text": "the lightest color", "isCorrect": true }, { "id": "b", "text": "to know something", "isCorrect": false }, { "id": "c", "text": "water", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u3_e6", "type": "reorder_words", "instruction": "Arrange the words to form a correct sentence.", "points": 10, "content": { "shuffledWords": ["is", "The", "flower", "yellow"], "correctOrder": ["The", "flower", "is", "yellow"], "translation": "The flower is yellow" } },
+                  { "exerciseId": "ab_s1_u3_e7", "type": "fill_blank", "instruction": "Fill in the blank with the correct color.", "points": 10, "content": { "text": "The sky is _____.", "context": "Describing the sky", "blanks": [{ "position": 1, "acceptedAnswers": ["blue"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u3_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What color is 'green'?", "options": [{ "id": "a", "text": "The color of grass", "isCorrect": true }, { "id": "b", "text": "The color of snow", "isCorrect": false }, { "id": "c", "text": "The color of fire", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u3_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "After 'is' we use the adjective alone: The house is white.", "question": "The house is _____. (The house is white.)", "options": [{ "id": "a", "text": "white", "isCorrect": true }, { "id": "b", "text": "whites", "isCorrect": false }, { "id": "c", "text": "whitely", "isCorrect": false }], "explanation": "In English, adjectives don't change form. We say 'The house is white' not 'The house is whites'." } },
+                  { "exerciseId": "ab_s1_u3_e10", "type": "write_response", "instruction": "Read and describe in your own words.", "points": 10, "content": { "prompt": "Read and describe:", "text": "The cat is black and white.", "acceptedKeywords": ["cat", "black", "white"], "sampleAnswer": "The cat is black and white.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u4",
+                "title": "The Alphabet & Pronunciation",
+                "order": 4,
+                "topic": "alphabet",
+                "objectives": ["Pronounce all English letters", "Spell your name in English", "Recognize letter sounds"],
+                "newVocabulary": [
+                  { "term": "the alphabet", "definition": "the letters A to Z", "phonetic": "the AL-fuh-bet", "partOfSpeech": "noun", "gender": null },
+                  { "term": "to spell", "definition": "to say letters one by one", "phonetic": "to spel", "partOfSpeech": "verb", "gender": null },
+                  { "term": "the letter", "definition": "one character (A, B, C...)", "phonetic": "the LET-er", "partOfSpeech": "noun", "gender": null }
+                ],
+                "grammarFocus": "English alphabet — 26 letters, vowels (A, E, I, O, U) and consonants",
+                "culturalNote": "When spelling on the phone, English speakers often use words: A as in Apple, B as in Boy.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u4_e1", "type": "pronunciation", "instruction": "Listen to the English alphabet sounds.", "points": 10, "content": { "sentence": "A, B, C, D, E, F, G", "translation": "The first seven letters of the alphabet.", "words": [{ "word": "A", "meaning": "first letter", "phonetic": "ay", "isNew": true }, { "word": "B", "meaning": "second letter", "phonetic": "bee", "isNew": true }, { "word": "C", "meaning": "third letter", "phonetic": "see", "isNew": true }, { "word": "D", "meaning": "fourth letter", "phonetic": "dee", "isNew": true }, { "word": "E", "meaning": "fifth letter", "phonetic": "ee", "isNew": true }, { "word": "F", "meaning": "sixth letter", "phonetic": "ef", "isNew": true }, { "word": "G", "meaning": "seventh letter", "phonetic": "jee", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u4_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "How do you spell that?", "translation": "How do you spell that?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "M-A-R-I-A", "isCorrect": true }, { "id": "b", "text": "Thank you.", "isCorrect": false }, { "id": "c", "text": "My name is Maria.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "H", "options": [{ "id": "a", "text": "the letter H (as in Hello)", "isCorrect": true }, { "id": "b", "text": "the letter A", "isCorrect": false }, { "id": "c", "text": "the letter I", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e4", "type": "matching_pairs", "instruction": "Match the letters with words that start with them.", "points": 10, "content": { "pairs": [{ "source": "A", "target": "Apple" }, { "source": "B", "target": "Ball" }, { "source": "C", "target": "Cat" }, { "source": "D", "target": "Dog" }] } },
+                  { "exerciseId": "ab_s1_u4_e5", "type": "select_translation", "instruction": "Which letter makes this sound?", "points": 10, "content": { "prompt": "The sound at the start of 'hello'", "promptLanguage": "source", "options": [{ "id": "a", "text": "H", "isCorrect": true }, { "id": "b", "text": "E", "isCorrect": false }, { "id": "c", "text": "L", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e6", "type": "reorder_words", "instruction": "Spell out 'Hello' letter by letter.", "points": 10, "content": { "shuffledWords": ["L", "H", "O", "L", "E"], "correctOrder": ["H", "E", "L", "L", "O"], "translation": "Hello" } },
+                  { "exerciseId": "ab_s1_u4_e7", "type": "fill_blank", "instruction": "Fill in the missing letter.", "points": 10, "content": { "text": "He___o (Hello)", "blanks": [{ "position": 1, "acceptedAnswers": ["ll"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u4_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "How many vowels are in the English alphabet?", "options": [{ "id": "a", "text": "5 (A, E, I, O, U)", "isCorrect": true }, { "id": "b", "text": "3", "isCorrect": false }, { "id": "c", "text": "26", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u4_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "We use 'spell' to say letters one by one. 'How do you spell...?'", "question": "How do you _____ your name? (say the letters)", "options": [{ "id": "a", "text": "spell", "isCorrect": true }, { "id": "b", "text": "spells", "isCorrect": false }, { "id": "c", "text": "spelling", "isCorrect": false }], "explanation": "After 'do you' we use the base form of the verb: spell." } },
+                  { "exerciseId": "ab_s1_u4_e10", "type": "write_response", "instruction": "Spell the word.", "points": 10, "content": { "prompt": "Write the word 'hello' letter by letter with hyphens:", "text": "hello", "acceptedKeywords": ["H", "E", "L", "L", "O", "h", "e", "l", "l", "o"], "sampleAnswer": "H-E-L-L-O", "minWords": 1, "maxWords": 10 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u5",
+                "title": "Basic Phrases & Politeness",
+                "order": 5,
+                "topic": "phrases",
+                "objectives": ["Use common polite phrases (please, thank you, excuse me)", "Ask 'how are you?' and respond", "Handle basic social interactions"],
+                "newVocabulary": [
+                  { "term": "Excuse me", "definition": "polite way to get attention or apologize", "phonetic": "ik-SKYOOS mee", "partOfSpeech": "phrase", "gender": null },
+                  { "term": "How are you?", "definition": "a question about someone's well-being", "phonetic": "how ar yoo", "partOfSpeech": "phrase", "gender": null },
+                  { "term": "I'm fine", "definition": "reply meaning you are okay", "phonetic": "aym fyn", "partOfSpeech": "phrase", "gender": null },
+                  { "term": "Yes", "definition": "affirmative reply", "phonetic": "yes", "partOfSpeech": "interjection", "gender": null },
+                  { "term": "No", "definition": "negative reply", "phonetic": "noh", "partOfSpeech": "interjection", "gender": null }
+                ],
+                "grammarFocus": "Short answers: Yes, I am. / No, I'm not. — contractions (I'm = I am)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u5_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Excuse me, how are you?", "translation": "Polite way to get attention and ask about well-being.", "words": [{ "word": "Excuse", "meaning": "to apologize", "phonetic": "ik-SKYOOS", "isNew": true }, { "word": "me", "meaning": "myself", "phonetic": "mee", "isNew": true }, { "word": "how", "meaning": "in what way", "phonetic": "how", "isNew": true }, { "word": "are", "meaning": "be (plural)", "phonetic": "ar", "isNew": false }, { "word": "you", "meaning": "the person spoken to", "phonetic": "yoo", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u5_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "How are you?", "translation": "How are you?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "I'm fine, thank you!", "isCorrect": true }, { "id": "b", "text": "Goodbye!", "isCorrect": false }, { "id": "c", "text": "My name is Thomas.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Excuse me", "options": [{ "id": "a", "text": "Polite way to get attention", "isCorrect": true }, { "id": "b", "text": "Thank you", "isCorrect": false }, { "id": "c", "text": "Goodbye", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e4", "type": "matching_pairs", "instruction": "Match the phrases.", "points": 10, "content": { "pairs": [{ "source": "Yes", "target": "affirmative" }, { "source": "No", "target": "negative" }, { "source": "Thank you", "target": "gratitude" }, { "source": "Please", "target": "polite request" }] } },
+                  { "exerciseId": "ab_s1_u5_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "I'm fine.", "promptLanguage": "target", "options": [{ "id": "a", "text": "I am okay.", "isCorrect": true }, { "id": "b", "text": "My name is Fine.", "isCorrect": false }, { "id": "c", "text": "I am leaving.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["fine", "am", "I"], "correctOrder": ["I", "am", "fine"], "translation": "I am fine" } },
+                  { "exerciseId": "ab_s1_u5_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "How _____ you?", "context": "Asking how someone is", "blanks": [{ "position": 1, "acceptedAnswers": ["are"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u5_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'Excuse me' mean?", "options": [{ "id": "a", "text": "Polite way to get attention or apologize", "isCorrect": true }, { "id": "b", "text": "Thank you", "isCorrect": false }, { "id": "c", "text": "Hello", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u5_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "I'm = I am. We use 'I'm' in casual speech.", "question": "_____ fine, thank you. (I am fine)", "options": [{ "id": "a", "text": "I'm", "isCorrect": true }, { "id": "b", "text": "I", "isCorrect": false }, { "id": "c", "text": "Am", "isCorrect": false }], "explanation": "'I'm' is the contraction of 'I am'. We use it in informal English." } },
+                  { "exerciseId": "ab_s1_u5_e10", "type": "write_response", "instruction": "Read and explain.", "points": 10, "content": { "prompt": "Translate or explain in simple English:", "text": "Excuse me! How are you? I'm fine, thank you.", "acceptedKeywords": ["excuse", "how", "fine", "thank"], "sampleAnswer": "Excuse me! How are you? I'm fine, thank you.", "minWords": 5, "maxWords": 30 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u6",
+                "title": "Food & Drink Basics",
+                "order": 6,
+                "topic": "food_drink",
+                "objectives": ["Name common food and drink items", "Say what you like and want", "Order simple items"],
+                "newVocabulary": [
+                  { "term": "water", "definition": "a clear drink", "phonetic": "WAW-ter", "partOfSpeech": "noun", "gender": null },
+                  { "term": "coffee", "definition": "a hot drink from beans", "phonetic": "KAW-fee", "partOfSpeech": "noun", "gender": null },
+                  { "term": "bread", "definition": "baked food from flour", "phonetic": "bred", "partOfSpeech": "noun", "gender": null },
+                  { "term": "milk", "definition": "white drink from cows", "phonetic": "milk", "partOfSpeech": "noun", "gender": null },
+                  { "term": "tea", "definition": "a hot drink from leaves", "phonetic": "tee", "partOfSpeech": "noun", "gender": null }
+                ],
+                "grammarFocus": "I would like... / I want... — polite requests",
+                "culturalNote": "In English we say 'a cup of coffee' or 'a glass of water'. We use 'some' with uncountable nouns.",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u6_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "Coffee and milk, please.", "translation": "A polite request for coffee with milk.", "words": [{ "word": "Coffee", "meaning": "hot drink", "phonetic": "KAW-fee", "isNew": true }, { "word": "and", "meaning": "plus", "phonetic": "and", "isNew": false }, { "word": "milk", "meaning": "white drink", "phonetic": "milk", "isNew": true }, { "word": "please", "meaning": "polite word", "phonetic": "pleez", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u6_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "What would you like to drink?", "translation": "What would you like to drink?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "A coffee, please.", "isCorrect": true }, { "id": "b", "text": "My name is Anna.", "isCorrect": false }, { "id": "c", "text": "Goodbye!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "water", "options": [{ "id": "a", "text": "a clear drink", "isCorrect": true }, { "id": "b", "text": "a hot drink", "isCorrect": false }, { "id": "c", "text": "white drink", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e4", "type": "matching_pairs", "instruction": "Match the items.", "points": 10, "content": { "pairs": [{ "source": "coffee", "target": "hot drink from beans" }, { "source": "water", "target": "clear drink" }, { "source": "bread", "target": "baked food" }, { "source": "milk", "target": "white drink" }] } },
+                  { "exerciseId": "ab_s1_u6_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "tea", "promptLanguage": "target", "options": [{ "id": "a", "text": "hot drink from leaves", "isCorrect": true }, { "id": "b", "text": "the letter T", "isCorrect": false }, { "id": "c", "text": "the number 3", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["please", "water", "I", "would like"], "correctOrder": ["I", "would like", "water", "please"], "translation": "I would like water please" } },
+                  { "exerciseId": "ab_s1_u6_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "I would like _____, please.", "context": "Ordering coffee", "blanks": [{ "position": 1, "acceptedAnswers": ["coffee", "a coffee"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u6_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What is 'milk'?", "options": [{ "id": "a", "text": "A white drink from cows", "isCorrect": true }, { "id": "b", "text": "A hot drink", "isCorrect": false }, { "id": "c", "text": "Baked food", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u6_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "'Would like' is polite. 'Want' is more direct. We say 'I would like' or 'I'd like'.", "question": "I _____ like some tea, please.", "options": [{ "id": "a", "text": "would", "isCorrect": true }, { "id": "b", "text": "will", "isCorrect": false }, { "id": "c", "text": "want", "isCorrect": false }], "explanation": "'Would like' is the polite way to request something. We say 'I would like' not 'I want' in formal situations." } },
+                  { "exerciseId": "ab_s1_u6_e10", "type": "write_response", "instruction": "Translate or explain.", "points": 10, "content": { "prompt": "Explain in simple English:", "text": "I would like coffee and bread, please.", "acceptedKeywords": ["coffee", "bread", "please"], "sampleAnswer": "I would like coffee and bread, please. This is a polite request for food and drink.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u7",
+                "title": "Family Members",
+                "order": 7,
+                "topic": "family",
+                "objectives": ["Name immediate family members", "Talk about your family", "Use possessive words (my, your)"],
+                "newVocabulary": [
+                  { "term": "mother", "definition": "female parent", "phonetic": "MUH-ther", "partOfSpeech": "noun", "gender": null },
+                  { "term": "father", "definition": "male parent", "phonetic": "FAH-ther", "partOfSpeech": "noun", "gender": null },
+                  { "term": "sister", "definition": "female sibling", "phonetic": "SIS-ter", "partOfSpeech": "noun", "gender": null },
+                  { "term": "brother", "definition": "male sibling", "phonetic": "BRUH-ther", "partOfSpeech": "noun", "gender": null },
+                  { "term": "family", "definition": "parents and children together", "phonetic": "FAM-uh-lee", "partOfSpeech": "noun", "gender": null }
+                ],
+                "grammarFocus": "Possessive: my mother, your father, his sister, her brother",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u7_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "This is my family.", "translation": "Introducing your family.", "words": [{ "word": "This", "meaning": "this thing", "phonetic": "this", "isNew": false }, { "word": "is", "meaning": "be verb", "phonetic": "iz", "isNew": false }, { "word": "my", "meaning": "belonging to me", "phonetic": "my", "isNew": true }, { "word": "family", "meaning": "parents and children", "phonetic": "FAM-uh-lee", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u7_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Do you have siblings?", "translation": "Do you have siblings?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Yes, I have a sister.", "isCorrect": true }, { "id": "b", "text": "I am tired.", "isCorrect": false }, { "id": "c", "text": "Good morning!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "brother", "options": [{ "id": "a", "text": "male sibling", "isCorrect": true }, { "id": "b", "text": "bread", "isCorrect": false }, { "id": "c", "text": "bridge", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e4", "type": "matching_pairs", "instruction": "Match the family members.", "points": 10, "content": { "pairs": [{ "source": "mother", "target": "female parent" }, { "source": "father", "target": "male parent" }, { "source": "sister", "target": "female sibling" }, { "source": "brother", "target": "male sibling" }] } },
+                  { "exerciseId": "ab_s1_u7_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "family", "promptLanguage": "target", "options": [{ "id": "a", "text": "Parents and children together", "isCorrect": true }, { "id": "b", "text": "A friend", "isCorrect": false }, { "id": "c", "text": "A woman", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["sister", "My", "Anna", "is"], "correctOrder": ["My", "sister", "is", "Anna"], "translation": "My sister is Anna" } },
+                  { "exerciseId": "ab_s1_u7_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "_____ brother is named Thomas.", "context": "Talking about your brother", "blanks": [{ "position": 1, "acceptedAnswers": ["My"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u7_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'sister' mean?", "options": [{ "id": "a", "text": "Female sibling", "isCorrect": true }, { "id": "b", "text": "A sweater", "isCorrect": false }, { "id": "c", "text": "Mother", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u7_e9", "type": "grammar", "instruction": "Choose the correct possessive.", "points": 10, "content": { "rule": "'My' = belonging to me. 'Your' = belonging to you. We use them before nouns.", "question": "_____ sister is nice. (My sister is nice.)", "options": [{ "id": "a", "text": "My", "isCorrect": true }, { "id": "b", "text": "I", "isCorrect": false }, { "id": "c", "text": "Me", "isCorrect": false }], "explanation": "'My' shows that the sister belongs to the speaker. We say 'my sister' not 'I sister'." } },
+                  { "exerciseId": "ab_s1_u7_e10", "type": "write_response", "instruction": "Translate or explain.", "points": 10, "content": { "prompt": "Explain in simple English:", "text": "My family is big. I have two brothers and one sister.", "acceptedKeywords": ["family", "big", "two", "brothers", "sister"], "sampleAnswer": "My family is big. I have two brothers and one sister.", "minWords": 5, "maxWords": 30 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u8",
+                "title": "Animals",
+                "order": 8,
+                "topic": "animals",
+                "objectives": ["Name common animals", "Say which animals you like", "Use 'a' and 'an' correctly"],
+                "newVocabulary": [
+                  { "term": "dog", "definition": "a furry pet that barks", "phonetic": "dawg", "partOfSpeech": "noun", "gender": null },
+                  { "term": "cat", "definition": "a furry pet that meows", "phonetic": "kat", "partOfSpeech": "noun", "gender": null },
+                  { "term": "bird", "definition": "an animal with feathers that flies", "phonetic": "berd", "partOfSpeech": "noun", "gender": null },
+                  { "term": "fish", "definition": "an animal that lives in water", "phonetic": "fish", "partOfSpeech": "noun", "gender": null },
+                  { "term": "animal", "definition": "a living creature", "phonetic": "AN-uh-mul", "partOfSpeech": "noun", "gender": null }
+                ],
+                "grammarFocus": "Articles: 'a' before consonants (a dog), 'an' before vowels (an animal)",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u8_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "I have a dog and a cat.", "translation": "Talking about pets.", "words": [{ "word": "I", "meaning": "myself", "phonetic": "ay", "isNew": false }, { "word": "have", "meaning": "possess", "phonetic": "hav", "isNew": false }, { "word": "a", "meaning": "one", "phonetic": "uh", "isNew": true }, { "word": "dog", "meaning": "pet that barks", "phonetic": "dawg", "isNew": true }, { "word": "and", "meaning": "plus", "phonetic": "and", "isNew": false }, { "word": "cat", "meaning": "pet that meows", "phonetic": "kat", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u8_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Do you have a pet?", "translation": "Do you have a pet?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "Yes, I have a dog.", "isCorrect": true }, { "id": "b", "text": "No, my name is Max.", "isCorrect": false }, { "id": "c", "text": "Thank you!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "cat", "options": [{ "id": "a", "text": "a furry pet that meows", "isCorrect": true }, { "id": "b", "text": "a hot drink", "isCorrect": false }, { "id": "c", "text": "a cap", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e4", "type": "matching_pairs", "instruction": "Match the animals.", "points": 10, "content": { "pairs": [{ "source": "dog", "target": "barks" }, { "source": "cat", "target": "meows" }, { "source": "bird", "target": "flies" }, { "source": "fish", "target": "lives in water" }] } },
+                  { "exerciseId": "ab_s1_u8_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "animal", "promptLanguage": "target", "options": [{ "id": "a", "text": "A living creature", "isCorrect": true }, { "id": "b", "text": "A door", "isCorrect": false }, { "id": "c", "text": "Tea", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["cat", "have", "a", "I"], "correctOrder": ["I", "have", "a", "cat"], "translation": "I have a cat" } },
+                  { "exerciseId": "ab_s1_u8_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "I have a _____.", "context": "Talking about your pet dog", "blanks": [{ "position": 1, "acceptedAnswers": ["dog"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u8_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What is the plural of 'dog'?", "options": [{ "id": "a", "text": "dogs", "isCorrect": true }, { "id": "b", "text": "doges", "isCorrect": false }, { "id": "c", "text": "dogges", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u8_e9", "type": "grammar", "instruction": "Choose the correct article.", "points": 10, "content": { "rule": "Use 'a' before consonant sounds, 'an' before vowel sounds. 'Dog' starts with a consonant.", "question": "I have _____ dog. (I have a dog.)", "options": [{ "id": "a", "text": "a", "isCorrect": true }, { "id": "b", "text": "an", "isCorrect": false }, { "id": "c", "text": "the", "isCorrect": false }], "explanation": "We say 'a dog' because 'dog' starts with a consonant sound. We say 'an animal' because 'animal' starts with a vowel." } },
+                  { "exerciseId": "ab_s1_u8_e10", "type": "write_response", "instruction": "Translate or explain.", "points": 10, "content": { "prompt": "Explain in simple English:", "text": "I have two dogs and three fish.", "acceptedKeywords": ["two", "dogs", "three", "fish"], "sampleAnswer": "I have two dogs and three fish.", "minWords": 3, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u9",
+                "title": "Body Parts",
+                "order": 9,
+                "topic": "body_parts",
+                "objectives": ["Name basic body parts", "Describe pain or discomfort simply", "Use 'my' with body parts"],
+                "newVocabulary": [
+                  { "term": "head", "definition": "the top part of the body", "phonetic": "hed", "partOfSpeech": "noun", "gender": null },
+                  { "term": "hand", "definition": "the part at the end of the arm", "phonetic": "hand", "partOfSpeech": "noun", "gender": null },
+                  { "term": "eye", "definition": "the organ you see with", "phonetic": "ay", "partOfSpeech": "noun", "gender": null },
+                  { "term": "mouth", "definition": "the opening for eating and speaking", "phonetic": "mowth", "partOfSpeech": "noun", "gender": null },
+                  { "term": "ear", "definition": "the organ you hear with", "phonetic": "eer", "partOfSpeech": "noun", "gender": null }
+                ],
+                "grammarFocus": "My head hurts. — subject + verb + body part",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 70,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u9_e1", "type": "pronunciation", "instruction": "Listen and read.", "points": 10, "content": { "sentence": "This is my head.", "translation": "Pointing to a body part.", "words": [{ "word": "This", "meaning": "this thing", "phonetic": "this", "isNew": false }, { "word": "is", "meaning": "be verb", "phonetic": "iz", "isNew": false }, { "word": "my", "meaning": "belonging to me", "phonetic": "my", "isNew": false }, { "word": "head", "meaning": "top of body", "phonetic": "hed", "isNew": true }] } },
+                  { "exerciseId": "ab_s1_u9_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "What hurts?", "translation": "What hurts?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "My head hurts.", "isCorrect": true }, { "id": "b", "text": "My name is Maria.", "isCorrect": false }, { "id": "c", "text": "Thank you!", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "hand", "options": [{ "id": "a", "text": "the part at end of arm", "isCorrect": true }, { "id": "b", "text": "a hat", "isCorrect": false }, { "id": "c", "text": "the head", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e4", "type": "matching_pairs", "instruction": "Match the body parts.", "points": 10, "content": { "pairs": [{ "source": "head", "target": "top of body" }, { "source": "hand", "target": "end of arm" }, { "source": "eye", "target": "you see with it" }, { "source": "ear", "target": "you hear with it" }] } },
+                  { "exerciseId": "ab_s1_u9_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "mouth", "promptLanguage": "target", "options": [{ "id": "a", "text": "Opening for eating and speaking", "isCorrect": true }, { "id": "b", "text": "The moon", "isCorrect": false }, { "id": "c", "text": "The mind", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["head", "my", "hurts"], "correctOrder": ["My", "head", "hurts"], "translation": "My head hurts" } },
+                  { "exerciseId": "ab_s1_u9_e7", "type": "fill_blank", "instruction": "Fill in the blank.", "points": 10, "content": { "text": "My _____ hurts.", "context": "Saying your hand hurts", "blanks": [{ "position": 1, "acceptedAnswers": ["hand"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u9_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "What does 'eye' mean?", "options": [{ "id": "a", "text": "The organ you see with", "isCorrect": true }, { "id": "b", "text": "The organ you hear with", "isCorrect": false }, { "id": "c", "text": "The arm", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u9_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "We say 'My head hurts' — possessive + body part + verb. 'Hurts' goes with he/she/it.", "question": "_____ head hurts. (My head hurts.)", "options": [{ "id": "a", "text": "My", "isCorrect": true }, { "id": "b", "text": "I", "isCorrect": false }, { "id": "c", "text": "Me", "isCorrect": false }], "explanation": "We use 'my' to show it's our head. 'My head' is the subject. 'Hurts' is the verb." } },
+                  { "exerciseId": "ab_s1_u9_e10", "type": "write_response", "instruction": "Translate or explain.", "points": 10, "content": { "prompt": "Explain in simple English:", "text": "My head hurts and my hand hurts too.", "acceptedKeywords": ["head", "hurts", "hand", "too"], "sampleAnswer": "My head hurts and my hand hurts too.", "minWords": 4, "maxWords": 20 } }
+                ]
+              },
+              {
+                "id": "ab_s1_u10",
+                "title": "Review & Practice",
+                "order": 10,
+                "topic": "review",
+                "objectives": ["Review all vocabulary from Section 1", "Practice greetings, numbers, colors, and family", "Build confidence with mixed exercises"],
+                "newVocabulary": [],
+                "grammarFocus": "Review: my/your, have/has, I would like, basic adjectives",
+                "estimatedMinutes": 15,
+                "pointsValue": 100,
+                "passThreshold": 80,
+                "exercises": [
+                  { "exerciseId": "ab_s1_u10_e1", "type": "pronunciation", "instruction": "Listen and read this conversation.", "points": 10, "content": { "sentence": "Hello! My name is Maria. I have two cats.", "translation": "A greeting and introduction with pets.", "words": [{ "word": "Hello", "meaning": "greeting", "phonetic": "huh-LOH", "isNew": false }, { "word": "My", "meaning": "belonging to me", "phonetic": "my", "isNew": false }, { "word": "name", "meaning": "what you are called", "phonetic": "naym", "isNew": false }, { "word": "is", "meaning": "be verb", "phonetic": "iz", "isNew": false }, { "word": "Maria", "meaning": "Maria", "phonetic": "muh-REE-uh", "isNew": false }, { "word": "have", "meaning": "possess", "phonetic": "hav", "isNew": false }, { "word": "two", "meaning": "2", "phonetic": "too", "isNew": false }, { "word": "cats", "meaning": "plural of cat", "phonetic": "kats", "isNew": false }] } },
+                  { "exerciseId": "ab_s1_u10_e2", "type": "complete_chat", "instruction": "Complete the conversation.", "points": 10, "content": { "dialogue": [{ "speaker": "app", "text": "Hello! What is your name?", "translation": "Hello! What is your name?" }, { "speaker": "user", "text": null }, { "speaker": "app", "text": "Nice to meet you! How are you?", "translation": "Nice to meet you! How are you?" }, { "speaker": "user", "text": null }], "options": [{ "id": "a", "text": "My name is Thomas. / I'm fine, thank you!", "isCorrect": true }, { "id": "b", "text": "Goodbye! / See you!", "isCorrect": false }, { "id": "c", "text": "Red and blue. / Three cats.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e3", "type": "listen_select", "instruction": "Tap what you hear.", "points": 10, "content": { "transcript": "Goodbye", "options": [{ "id": "a", "text": "A farewell", "isCorrect": true }, { "id": "b", "text": "A greeting", "isCorrect": false }, { "id": "c", "text": "Excuse me", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e4", "type": "matching_pairs", "instruction": "Match all the words you've learned.", "points": 10, "content": { "pairs": [{ "source": "Good morning", "target": "greeting before noon" }, { "source": "sister", "target": "female sibling" }, { "source": "red", "target": "color of blood" }, { "source": "five", "target": "the number 5" }] } },
+                  { "exerciseId": "ab_s1_u10_e5", "type": "select_translation", "instruction": "Select the correct meaning.", "points": 10, "content": { "prompt": "My mother drinks coffee.", "promptLanguage": "target", "options": [{ "id": "a", "text": "My female parent drinks a hot beverage.", "isCorrect": true }, { "id": "b", "text": "My mother is beautiful.", "isCorrect": false }, { "id": "c", "text": "My mother has a cat.", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e6", "type": "reorder_words", "instruction": "Arrange the words.", "points": 10, "content": { "shuffledWords": ["have", "dogs", "I", "three"], "correctOrder": ["I", "have", "three", "dogs"], "translation": "I have three dogs" } },
+                  { "exerciseId": "ab_s1_u10_e7", "type": "fill_blank", "instruction": "Fill in the blanks.", "points": 10, "content": { "text": "_____, my _____ is Anna.", "context": "Introducing yourself", "blanks": [{ "position": 1, "acceptedAnswers": ["Hello", "Hi"], "caseSensitive": false }, { "position": 2, "acceptedAnswers": ["name"], "caseSensitive": false }] } },
+                  { "exerciseId": "ab_s1_u10_e8", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 10, "content": { "question": "How do you say 'Excuse me' in English?", "options": [{ "id": "a", "text": "Excuse me", "isCorrect": true }, { "id": "b", "text": "Goodbye", "isCorrect": false }, { "id": "c", "text": "Thank you very much", "isCorrect": false }] } },
+                  { "exerciseId": "ab_s1_u10_e9", "type": "grammar", "instruction": "Choose the correct form.", "points": 10, "content": { "rule": "Review: We use 'my' before nouns. 'The cat' needs 'is' for the verb.", "question": "The cat _____ black. (The cat is black.)", "options": [{ "id": "a", "text": "is", "isCorrect": true }, { "id": "b", "text": "are", "isCorrect": false }, { "id": "c", "text": "am", "isCorrect": false }], "explanation": "With 'the cat' (singular) we use 'is'. With 'the cats' (plural) we use 'are'." } },
+                  { "exerciseId": "ab_s1_u10_e10", "type": "write_response", "instruction": "Write a short introduction in English based on this text.", "points": 10, "content": { "prompt": "Read and write a similar introduction about yourself:", "text": "Hello! My name is Maria. I have a sister and a brother. My cat is black. I like to drink coffee. Goodbye!", "acceptedKeywords": ["hello", "name", "sister", "brother", "cat", "black", "coffee", "goodbye"], "sampleAnswer": "Hello! My name is [your name]. I have a sister and a brother. My cat is black. I like to drink coffee. Goodbye!", "minWords": 10, "maxWords": 50 } }
+                ]
+              }
+            ],
+            "checkpoint": {
+              "title": "Section 1 Review: Everyday Basics",
+              "estimatedMinutes": 10,
+              "exercises": [
+                { "exerciseId": "ab_s1_cp_e1", "type": "matching_pairs", "instruction": "Match all the key vocabulary from Section 1.", "points": 20, "content": { "pairs": [{ "source": "Hello", "target": "a greeting" }, { "source": "family", "target": "parents and children" }, { "source": "red", "target": "color of blood" }, { "source": "dog", "target": "pet that barks" }, { "source": "five", "target": "the number 5" }, { "source": "head", "target": "top of body" }] } },
+                { "exerciseId": "ab_s1_cp_e2", "type": "multiple_choice", "instruction": "Choose the correct answer.", "points": 20, "content": { "question": "Complete: 'I _____ Anna and I have two cats.'", "options": [{ "id": "a", "text": "am", "isCorrect": true }, { "id": "b", "text": "is", "isCorrect": false }, { "id": "c", "text": "are", "isCorrect": false }] } },
+                { "exerciseId": "ab_s1_cp_e3", "type": "write_response", "instruction": "Write a short self-introduction in English.", "points": 20, "content": { "prompt": "Write 3-5 sentences about yourself. Include: your name, your family, a pet or favorite thing, and a greeting.", "text": "Tell us about you!", "acceptedKeywords": ["hello", "name", "family", "brother", "sister", "dog", "cat", "thank", "goodbye"], "sampleAnswer": "Hello! My name is Thomas. I have a brother and a sister. My dog is brown. I like to drink tea. Goodbye!", "minWords": 10, "maxWords": 50 } }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastUpdated": "2026-03-08",
+      "author": "PolyGlot Team"
+    }
+  }
+}

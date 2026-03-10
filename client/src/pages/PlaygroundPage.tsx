@@ -236,16 +236,19 @@ export function PlaygroundPage() {
     }
   };
 
-  const handleLoadDataSample = async () => {
+  const handleLoadDataSample = async (file: "default" | "en-en" = "default") => {
     setIsBusy(true);
     try {
-      const data = await getSampleResources();
+      const data = await getSampleResources(file);
       setDataText(JSON.stringify(data, null, 2));
       const src = data?.curriculum?.sourceLanguage?.code;
       const tgt = data?.curriculum?.targetLanguage?.code;
       if (typeof src === "string") setSourceInput(src);
       if (typeof tgt === "string") setTargetInput(tgt);
-      showStatus("success", "Loaded resources.json sample.");
+      showStatus(
+        "success",
+        file === "en-en" ? "Loaded resources-en-en.json (en→en)." : "Loaded resources.json sample."
+      );
     } catch (error) {
       showStatus("error", error instanceof Error ? error.message : "Unknown error");
     } finally {
@@ -415,14 +418,24 @@ export function PlaygroundPage() {
                     <label className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                       JSON Data
                     </label>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      onClick={handleLoadDataSample}
-                      disabled={isBusy}
-                    >
-                      Load resources.json
-                    </Button>
+                    <div className="flex gap-1">
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => handleLoadDataSample("default")}
+                        disabled={isBusy}
+                      >
+                        Load en→de
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => handleLoadDataSample("en-en")}
+                        disabled={isBusy}
+                      >
+                        Load en→en
+                      </Button>
+                    </div>
                   </div>
                   <Textarea
                     value={dataText}

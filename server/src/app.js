@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import contentRoutes from "./routes/contentRoutes.js";
 import playgroundRoutes from "./routes/playgroundRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import conversationRoutes from "./routes/conversationRoutes.js";
 import { authenticate } from "./middleware/authenticate.js";
 import { authorize } from "./middleware/authorize.js";
 
@@ -24,6 +25,7 @@ app.get("/api/health", (_req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api", contentRoutes);
+app.use("/api", conversationRoutes);
 app.use(
   "/api/playground",
   authenticate,

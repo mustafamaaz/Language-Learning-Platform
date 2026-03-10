@@ -1,4 +1,4 @@
-﻿import { readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -17,7 +17,9 @@ export async function getSchema(_req, res) {
   res.json(schema);
 }
 
-export async function getResources(_req, res) {
-  const resources = await readJsonFile("resources.json");
+// SEARCH: upload resources
+export async function getResources(req, res) {
+  const file = req.query.file === "en-en" ? "resources-en-en.json" : "resources.json";
+  const resources = await readJsonFile(file);
   res.json(resources);
 }

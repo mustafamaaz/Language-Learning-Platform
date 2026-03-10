@@ -258,6 +258,7 @@ export function GamePage() {
             proficiency={selectedProficiency}
             section={selectedSectionObj}
             unit={selectedUnitData}
+            targetLang={targetCode}
             isCompleted={
               getCompletedUnits(
                 progress,

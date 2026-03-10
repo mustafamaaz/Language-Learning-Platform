@@ -7,6 +7,7 @@ import { LoginPage } from "@/pages/LoginPage";
 import { AdminLoginPage } from "@/pages/AdminLoginPage";
 import { ConfigPage } from "@/pages/ConfigPage";
 import { HomePage } from "@/pages/HomePage";
+import { VoiceCallPage } from "@/pages/VoiceCallPage";
 import { SettingsPage } from "@/pages/SettingsPage";
 import { PlaygroundPage } from "@/pages/PlaygroundPage";
 
@@ -31,6 +32,7 @@ export default function App() {
               {/* Authenticated + must have configured preferences */}
               <Route element={<ProtectedRoute requireConfig />}>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/call" element={<VoiceCallPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
               </Route>
 

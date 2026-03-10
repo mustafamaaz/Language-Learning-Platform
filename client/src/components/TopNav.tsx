@@ -35,6 +35,13 @@ export function TopNav() {
           </Button>
           <Button
             size="sm"
+            variant={path === "/call" ? "default" : "ghost"}
+            onClick={() => navigate("/call")}
+          >
+            Call AI
+          </Button>
+          <Button
+            size="sm"
             variant={path === "/settings" ? "default" : "ghost"}
             onClick={() => navigate("/settings")}
           >
